@@ -2,11 +2,11 @@
 
 ## Current state
 
-The repository is `atikrion5256-art/bdoffer` on branch `main`. The latest cleanup commit is created after the audit and should be treated as the source of truth. The public static site files are ready for GitHub Pages. The Node backend and admin source remain in the repository for a separate API deployment, but the Pages workflow excludes them.
+The repository is `atikrion5256-art/bdoffer` on branch `main`. The latest source of truth is the newest commit on `main`. The public static site is configured for free GitHub Pages hosting at `https://atikrion5256-art.github.io/bdoffer/`. No custom domain is active in the current mode.
 
 ## What was completed
 
-The audit removed the unused legacy source modules, unused CSS modules, the old build script, the logo source demo, unused package metadata, and the duplicate unversioned hero image. The public site now uses `assets/hero/hero-image-v2.png` and `assets/favicon.svg`.
+The repository was cleaned of unused legacy source modules, unused CSS modules, the old build script, the logo source demo, unused package metadata, the duplicate unversioned hero image, and the custom-domain `CNAME` file. The public site uses `assets/hero/hero-image-v2.png` and `assets/favicon.svg`.
 
 The homepage has a no-crop responsive hero image, compact mobile operator filtering, a repeating twelve-hour countdown, a countdown CTA, automatically rendered current dates, and public-link hydration. The admin dashboard supports affiliate URL creation, update, activation, deletion, and placement assignment.
 
@@ -14,22 +14,19 @@ The available affiliate placements are `hero_cta`, `operator_buttons`, `offer_ca
 
 ## Remaining work
 
-The remaining production work is external configuration rather than source-code cleanup:
-
-1. Enable GitHub Pages in **Settings → Pages** for the repository and select **GitHub Actions** as the source.
-2. Confirm the custom domain `bdoffer.online` in GitHub Pages.
-3. Configure the registrar DNS. Use A records for `@` pointing to `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, and `185.199.111.153`. Use a CNAME for `www` pointing to `atikrion5256-art.github.io`.
-4. Wait for DNS propagation, then enable HTTPS in GitHub Pages.
-5. Deploy `server.js` to a Node-compatible host if the admin dashboard and affiliate APIs must work in production. GitHub Pages cannot execute `server.js`.
-6. Set `ADMIN_USERNAME` and `ADMIN_PASSWORD` as production secrets on the API host. Never commit `.admin-env` or credentials.
-7. If the API uses a separate origin, update the frontend API base URL and allow only `https://bdoffer.online` through CORS.
+1. Confirm GitHub Pages is set to **GitHub Actions** in **Settings → Pages** if the repository has not already been enabled.
+2. Verify the free URL: `https://atikrion5256-art.github.io/bdoffer/`.
+3. Deploy `server.js` to a Node-compatible host if the admin dashboard and affiliate APIs must work in production. GitHub Pages cannot execute `server.js`.
+4. Set `ADMIN_USERNAME` and `ADMIN_PASSWORD` as production secrets on the API host. Never commit `.admin-env` or credentials.
+5. If the API uses a separate origin, update the frontend API base URL and allow only the GitHub Pages origin through CORS.
+6. A custom domain can be configured later, but that is outside the current free-hosting setup.
 
 ## Verification commands
 
 ```bash
 node --check server.js
 node --check admin.js
-curl -I https://bdoffer.online/
+curl -I https://atikrion5256-art.github.io/bdoffer/
 gh run list --repo atikrion5256-art/bdoffer --limit 5
 ```
 
@@ -46,4 +43,4 @@ curl http://127.0.0.1:8080/api/public-links
 
 ## Do not do
 
-Do not reintroduce the removed `app.js`, `build.js`, `client.js`, `components.js`, `data.js`, `icons.js`, legacy CSS modules, `logo-bobble-source.html`, `package.json`, or the unversioned `hero-image.png`. Do not publish `.admin-env`, `data/`, sessions, tokens, or passwords to GitHub Pages.
+Do not reintroduce the removed legacy files, publish `.admin-env`, runtime data, sessions, tokens, or passwords to GitHub Pages, or claim that admin functionality works on GitHub Pages without a separate API deployment.

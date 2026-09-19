@@ -2,7 +2,7 @@
 
 ## Result
 
-The repository was cleaned and pushed to GitHub at commit `9ec01a3`. The public site is GitHub Pages-compatible as a static artifact. The current sandbox Node server and affiliate administration API remain functional.
+The repository was cleaned and pushed to GitHub. The public site is GitHub Pages-compatible as a static artifact and is configured for free `github.io` hosting without a custom domain. The current sandbox Node server and affiliate administration API remain functional.
 
 ## Removed items
 
@@ -30,9 +30,7 @@ The cleanup removed the unused legacy build pipeline, duplicate source modules, 
 
 ## Remaining production work
 
-GitHub Pages is not yet enabled for the repository. The workflow reaches the Pages setup step but GitHub rejects automatic site creation with `Resource not accessible by integration`. This requires a repository owner to open **Settings → Pages**, select **GitHub Actions**, and save the setting once.
-
-DNS for `bdoffer.online` is also not currently resolving. Configure the four GitHub Pages A records for the root domain and a CNAME for `www`, as documented in `README.md` and `NEXT_AGENT_INSTRUCTIONS.md`.
+The custom domain was removed for now. The intended free URL is `https://atikrion5256-art.github.io/bdoffer/`. If GitHub Pages has not already been enabled, a repository owner must open **Settings → Pages**, select **GitHub Actions**, and save the setting once. No DNS configuration is required for the free URL.
 
 GitHub Pages cannot execute the Node backend. To make admin login and affiliate placement updates work on the final domain, deploy `server.js` to a Node-compatible host and configure the frontend API origin and CORS policy.
 
