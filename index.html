@@ -1051,10 +1051,12 @@ svg { display: block; }
   const apply = (link, url) => { if (!link || !url) return; link.href = url; link.title = url; link.dataset.backendLink = 'true'; link.dataset.linkKey = link.dataset.linkKey || keyFor(link.textContent); };
   fetch(`/api/public-links?ts=${Date.now()}`, { cache: 'no-store', credentials: 'include' }).then(response => { if (!response.ok) throw new Error('public_links_error'); return response.json(); }).then(payload => {
     const source = payload && payload.links; if (!source || typeof source !== 'object') throw new Error('invalid_public_links');
-    const links = {}; Object.entries(source).forEach(([key, value]) => { const url = typeof value === 'string' ? value : value?.url; if (/^https:\/\//i.test(url || '')) links[key] = url; });
-    document.querySelectorAll('.offer-card').forEach(card => { const key = keyFor(card.id) || keyFor(card.textContent); const cta = card.querySelector('.offer-card__cta'); if (key && cta && links[key]) apply(cta, links[key]); });
-    document.querySelectorAll('.op-quick').forEach(button => { const key = keyFor(button.textContent || button.getAttribute('href')); if (key && links[key]) apply(button, links[key]); });
-    const hero = document.querySelector('.hero .btn-cta'); if (hero && links.banglalink) apply(hero, links.banglalink);
+    const links = {}; Object.entries(source).forEach(([key, value]) => { const url = typeof value === 'string' ? value : value?.url; const placements = typeof value === 'object' && Array.isArray(value?.placements) ? value.placements : ['hero_cta', 'operator_buttons', 'offer_cards', 'section_ctas', 'countdown_cta']; if (/^https:\/\//i.test(url || '')) links[key] = { url, placements }; });
+    document.querySelectorAll('.offer-card').forEach(card => { const key = keyFor(card.id) || keyFor(card.textContent); const cta = card.querySelector('.offer-card__cta'); const link = links[key]; if (link?.placements.includes('offer_cards')) apply(cta, link.url); });
+    document.querySelectorAll('.op-quick').forEach(button => { const key = keyFor(button.textContent || button.getAttribute('href')); const link = links[key]; if (link?.placements.includes('operator_buttons')) apply(button, link.url); });
+    const hero = document.querySelector('.hero .btn-cta'); const heroLink = links.banglalink; if (hero && heroLink?.placements.includes('hero_cta')) apply(hero, heroLink.url);
+    document.querySelectorAll('.offers .pill-btn').forEach(button => { const key = keyFor(button.textContent); const link = links[key || 'banglalink']; if (link?.placements.includes('section_ctas')) apply(button, link.url); });
+    const countdown = document.querySelector('.countdown__cta'); const countdownLink = links.banglalink; if (countdown && countdownLink?.placements.includes('countdown_cta')) apply(countdown, countdownLink.url);
   }).catch(() => { document.documentElement.dataset.publicLinksMode = 'fallback'; });
 })();
 </script>

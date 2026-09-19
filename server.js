@@ -15,11 +15,13 @@ const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 const SESSION_TTL_MS = 8 * 60 * 60 * 1000;
 const sessions = new Map();
 const ALLOWED_ORIGINS = new Set(['https://atik336666-sketch.github.io', 'http://localhost:8080', 'http://127.0.0.1:8080']);
+const PLACEMENTS = ['hero_cta', 'operator_buttons', 'offer_cards', 'section_ctas', 'countdown_cta'];
+const DEFAULT_PLACEMENTS = [...PLACEMENTS];
 const DEFAULT_LINKS = [
-  { linkKey: 'banglalink', label: 'Banglalink', url: 'https://www.banglalink.net/', isActive: true, sortOrder: 10 },
-  { linkKey: 'gp', label: 'Grameenphone', url: 'https://www.grameenphone.com/', isActive: true, sortOrder: 20 },
-  { linkKey: 'robi', label: 'Robi', url: 'https://www.robi.com.bd/', isActive: true, sortOrder: 30 },
-  { linkKey: 'airtel', label: 'Airtel', url: 'https://www.bd.airtel.com/', isActive: true, sortOrder: 40 },
+  { linkKey: 'banglalink', label: 'Banglalink', url: 'https://www.banglalink.net/', isActive: true, sortOrder: 10, placements: DEFAULT_PLACEMENTS },
+  { linkKey: 'gp', label: 'Grameenphone', url: 'https://www.grameenphone.com/', isActive: true, sortOrder: 20, placements: DEFAULT_PLACEMENTS },
+  { linkKey: 'robi', label: 'Robi', url: 'https://www.robi.com.bd/', isActive: true, sortOrder: 30, placements: DEFAULT_PLACEMENTS },
+  { linkKey: 'airtel', label: 'Airtel', url: 'https://www.bd.airtel.com/', isActive: true, sortOrder: 40, placements: DEFAULT_PLACEMENTS },
 ];
 
 function headers(res, origin) {
@@ -38,11 +40,11 @@ async function readBody(req) {
 }
 async function readJson(file, fallback) { try { return JSON.parse(await fs.readFile(file, 'utf8')); } catch (error) { if (error.code === 'ENOENT') return fallback; throw error; } }
 async function writeJson(file, value) { await fs.mkdir(DATA_DIR, { recursive: true }); await fs.writeFile(file, JSON.stringify(value, null, 2) + '\n', { mode: 0o600 }); }
-async function getLinks() { const links = await readJson(LINKS_FILE, DEFAULT_LINKS); if (!Array.isArray(links)) throw new Error('invalid_links_store'); return links; }
+async function getLinks() { const links = await readJson(LINKS_FILE, DEFAULT_LINKS); if (!Array.isArray(links)) throw new Error('invalid_links_store'); return links.map(link => normalizeLink(link, { placements: DEFAULT_PLACEMENTS })); }
 function tokenFrom(req) { const value = req.headers.authorization || ''; return value.startsWith('Bearer ') ? value.slice(7) : ''; }
 function authenticated(req) { const token = tokenFrom(req); const session = sessions.get(token); if (!session || session.expiresAt < Date.now()) { if (session) sessions.delete(token); return null; } return session; }
 function requireAdmin(req, res, origin) { const session = authenticated(req); if (!session) { json(res, 401, { ok: false, error: 'unauthorized' }, origin); return null; } return session; }
-function normalizeLink(input, fallback) { return { linkKey: input.linkKey ?? input.link_key ?? fallback.linkKey, label: input.label ?? input.display_label ?? fallback.label, url: input.url ?? input.link_url ?? fallback.url, isActive: input.isActive ?? input.is_active ?? fallback.isActive, sortOrder: input.sortOrder ?? input.sort_order ?? fallback.sortOrder }; }
+function normalizeLink(input, fallback) { const placements = Array.isArray(input.placements) ? input.placements.filter(item => PLACEMENTS.includes(item)) : (Array.isArray(fallback.placements) ? fallback.placements : DEFAULT_PLACEMENTS); return { linkKey: input.linkKey ?? input.link_key ?? fallback.linkKey, label: input.label ?? input.display_label ?? fallback.label, url: input.url ?? input.link_url ?? fallback.url, isActive: input.isActive ?? input.is_active ?? fallback.isActive, sortOrder: input.sortOrder ?? input.sort_order ?? fallback.sortOrder, placements }; }
 async function serveStatic(res, pathname) {
   const requested = pathname === '/' ? '/index.html' : pathname;
   const filePath = path.resolve(ROOT, `.${requested}`);
@@ -63,19 +65,19 @@ const server = http.createServer(async (req, res) => {
     }
     if (url.pathname === '/api/admin/session' && req.method === 'GET') return json(res, 200, { authenticated: Boolean(authenticated(req)) }, origin);
     if (url.pathname === '/api/admin/logout' && req.method === 'POST') { sessions.delete(tokenFrom(req)); return json(res, 200, { ok: true }, origin); }
-    if (url.pathname === '/api/public-links' && req.method === 'GET') { const links = await getLinks(); return json(res, 200, { links: Object.fromEntries(links.filter(link => link.isActive).map(link => [link.linkKey, { url: link.url, label: link.label }])) }, origin); }
+    if (url.pathname === '/api/public-links' && req.method === 'GET') { const links = await getLinks(); return json(res, 200, { links: Object.fromEntries(links.filter(link => link.isActive).map(link => [link.linkKey, { url: link.url, label: link.label, placements: link.placements }])) }, origin); }
     if (url.pathname === '/api/admin/links' && req.method === 'GET') { if (!requireAdmin(req, res, origin)) return; return json(res, 200, { links: await getLinks() }, origin); }
     if (url.pathname === '/api/admin/links' && req.method === 'POST') {
       if (!requireAdmin(req, res, origin)) return;
       const body = await readBody(req); const links = await getLinks();
       const record = normalizeLink(body, { linkKey: '', label: '', url: '', isActive: true, sortOrder: 999 });
-      if (!/^[a-z0-9_-]{2,50}$/.test(record.linkKey) || links.some(link => link.linkKey === record.linkKey) || !validText(record.label, 100) || !validHttps(record.url) || typeof record.isActive !== 'boolean' || !Number.isInteger(record.sortOrder)) return json(res, 400, { ok: false, error: 'invalid_or_duplicate_link' }, origin);
+      if (!/^[a-z0-9_-]{2,50}$/.test(record.linkKey) || links.some(link => link.linkKey === record.linkKey) || !validText(record.label, 100) || !validHttps(record.url) || typeof record.isActive !== 'boolean' || !Number.isInteger(record.sortOrder) || !record.placements.length) return json(res, 400, { ok: false, error: 'invalid_or_duplicate_link' }, origin);
       links.push(record); links.sort((a, b) => a.sortOrder - b.sortOrder); await writeJson(LINKS_FILE, links); return json(res, 201, record, origin);
     }
     const linkMatch = url.pathname.match(/^\/api\/admin\/links\/([^/]+)$/);
     if (linkMatch && req.method === 'PUT') {
       if (!requireAdmin(req, res, origin)) return; const key = decodeURIComponent(linkMatch[1]); const body = await readBody(req); const links = await getLinks(); const index = links.findIndex(link => link.linkKey === key); if (index < 0) return json(res, 404, { ok: false, error: 'link_not_found' }, origin);
-      const record = normalizeLink(body, links[index]); if (record.linkKey !== key || !validText(record.label, 100) || !validHttps(record.url) || typeof record.isActive !== 'boolean' || !Number.isInteger(record.sortOrder)) return json(res, 400, { ok: false, error: 'invalid_link' }, origin);
+      const record = normalizeLink(body, links[index]); if (record.linkKey !== key || !validText(record.label, 100) || !validHttps(record.url) || typeof record.isActive !== 'boolean' || !Number.isInteger(record.sortOrder) || !record.placements.length) return json(res, 400, { ok: false, error: 'invalid_link' }, origin);
       links[index] = record; await writeJson(LINKS_FILE, links); return json(res, 200, record, origin);
     }
     if (linkMatch && req.method === 'DELETE') {
