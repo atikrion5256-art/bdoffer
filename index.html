@@ -601,6 +601,47 @@ svg { display: block; }
   @media (prefers-reduced-motion: reduce) { .button-wave::after { animation: none; } }
 </style>
 
+<style id="premium-countdown-bobble">
+  /* Premium polish: keep the countdown calm, legible, and touch-friendly. */
+  .countdown { grid-template-columns: auto minmax(0, 1fr) auto; gap: 12px; padding: 11px 13px; border: 1px solid rgb(163 192 255 / .24); background: radial-gradient(28rem 10rem at 0 0, rgb(63 117 246 / .32), transparent 68%), linear-gradient(145deg, #101e4e 0%, #07102f 58%, #03081c 100%); box-shadow: 0 0 0 1px rgb(0 0 0 / .12), 0 20px 34px -16px rgb(2 10 50 / .88), inset 0 1px 0 rgb(255 255 255 / .18); backdrop-filter: blur(16px); }
+  .countdown::before { content: ''; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; background: linear-gradient(115deg, rgb(255 255 255 / .08), transparent 30% 70%, rgb(255 255 255 / .04)); }
+  .countdown > * { position: relative; }
+  .countdown__gift { display: grid; place-items: center; width: 2.65rem; height: 2.65rem; border-radius: 15px; font-size: 1.8rem; background: linear-gradient(145deg, rgb(255 255 255 / .14), rgb(255 255 255 / .04)); box-shadow: inset 0 1px 0 rgb(255 255 255 / .2), 0 8px 16px -10px rgb(255 123 0 / .8); }
+  .countdown__text { min-width: 0; }
+  .countdown__text h2 { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; letter-spacing: .01em; }
+  .countdown__timer { min-width: 8.7rem; padding: 7px 10px 6px; border: 1px solid rgb(255 194 26 / .38); background: linear-gradient(145deg, rgb(255 255 255 / .1), rgb(255 255 255 / .035)); box-shadow: inset 0 1px 0 rgb(255 255 255 / .1), 0 0 24px -7px rgb(255 194 26 / .55); }
+  .countdown__digits { gap: 4px; }
+  .countdown__digits div { min-width: 2.05rem; }
+  .countdown__digits b { display: block; font-size: 1.45rem; line-height: 1; letter-spacing: .03em; transition: color .25s ease, transform .25s ease; }
+  .countdown__digits b.tick { animation: none; }
+  .countdown__digits b.is-ticking { animation: tick .38s var(--ease); }
+  .countdown__digits small { margin-top: 3px; font-size: .58rem; line-height: 1; opacity: .76; }
+  .countdown__cta { min-height: 2.35rem; padding-inline: .85rem; transition: transform var(--t-fast) var(--ease), filter var(--t-fast), box-shadow var(--t-fast); }
+  .countdown__cta:hover { filter: brightness(1.08); transform: translateY(-1px); box-shadow: 0 9px 18px -8px #ff3048; }
+  .countdown__cta:active { transform: translateY(1px) scale(.98); }
+  /* Logo bobbles should feel like a coherent asset system, not loose floating icons. */
+  .logo-bobble { border: 1px solid rgb(102 145 210 / .16); box-shadow: inset 0 1px 0 #fff, 0 5px 10px rgb(20 70 150 / .18); animation: logo-bob 5.2s ease-in-out infinite; transition: transform var(--t-normal) var(--ease), box-shadow var(--t-normal) var(--ease); }
+  .logo-bobble::after { inset: 7% 14% auto; height: 29%; opacity: .6; }
+  .logo-bobble img { width: 72%; height: 72%; }
+  .offer-card__cta .logo-bobble--card { width: 1.65rem; height: 1.65rem; margin-inline-end: .08rem; }
+  .offer-card__cta:hover .logo-bobble, .op-quick:hover .logo-bobble, .pill-btn:hover .logo-bobble { transform: translateY(-2px) rotate(0deg) scale(1.06); box-shadow: inset 0 1px 0 #fff, 0 7px 13px rgb(20 70 150 / .25); }
+  @media (max-width: 560px) {
+    .countdown { grid-template-columns: auto minmax(0, 1fr); gap: 9px 10px; padding: 10px; border-radius: 20px; }
+    .countdown__gift { width: 2.35rem; height: 2.35rem; font-size: 1.55rem; }
+    .countdown__text h2 { font-size: .78rem; }
+    .countdown__cta { grid-column: 1 / -1; width: 100%; min-height: 2.35rem; }
+    .countdown__timer { grid-column: 2; grid-row: 1; min-width: 7.9rem; justify-self: end; padding: 6px 7px 5px; }
+    .countdown__digits div { min-width: 1.72rem; }
+    .countdown__digits b { font-size: 1.22rem; }
+    .countdown__digits i { font-size: 1rem; }
+    .offer-card__cta .logo-bobble--card { width: 1.52rem; height: 1.52rem; }
+  }
+  @media (min-width: 620px) {
+    .countdown { grid-template-columns: auto minmax(0, 1fr) auto auto; padding: 14px 20px; }
+    .countdown__gift { width: 3.4rem; height: 3.4rem; font-size: 2.35rem; }
+  }
+</style>
+
 
 <style id="contact-ui-polish">
   .contact-panel { width: min(100%, 760px); margin-inline: auto; }
@@ -791,24 +832,6 @@ svg { display: block; }
 <script>
 /* Progressive enhancement only: countdown + section reveal. */
 (() => {
-  const bn = (n) => String(n).padStart(2, '0').replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]);
-
-  /* Countdown */
-  const el = document.getElementById('countdown');
-  if (el) {
-    const q = (u) => el.querySelector(`[data-u="${u}"]`);
-    const cycleMs = 12 * 60 * 60 * 1000;
-    const paint = () => {
-      const elapsed = Date.now() % cycleMs;
-      const left = cycleMs - elapsed;
-      q('h').textContent = bn(Math.floor(left / 3.6e6));
-      q('m').textContent = bn(Math.floor(left / 6e4) % 60);
-      q('s').textContent = bn(Math.floor(left / 1e3) % 60);
-    };
-    paint();
-    setInterval(() => { if (!document.hidden) paint(); }, 1000);
-  }
-
   /* Reveal */
   const items = document.querySelectorAll('[data-reveal]');
   if (!('IntersectionObserver' in window)) { items.forEach((i) => i.classList.add('is-in')); return; }
@@ -842,23 +865,32 @@ svg { display: block; }
     toastTimer = setTimeout(() => node.classList.remove('is-visible'), 3200);
   };
 
-  // Countdown with a safe end-of-day fallback and a visible zero state.
+  // One canonical countdown with a safe end-of-day fallback and aligned ticks.
   try {
     const timer = $('#countdown');
     if (timer) {
       const parsed = Date.parse(timer.dataset.deadline || '');
       const fallback = new Date(); fallback.setHours(23, 59, 59, 999);
       const end = Number.isNaN(parsed) ? fallback.getTime() : parsed;
+      let last = {};
       const paint = () => {
         const left = Math.max(0, end - Date.now());
-        const set = (unit, value) => { const node = timer.querySelector(`[data-u="${unit}"]`); if (node) node.textContent = bn(value); };
+        const set = (unit, value) => {
+          const node = timer.querySelector(`[data-u="${unit}"]`);
+          if (!node) return;
+          const next = bn(value);
+          if (last[unit] !== next) { node.textContent = next; node.classList.remove('is-ticking'); void node.offsetWidth; node.classList.add('is-ticking'); }
+          last[unit] = next;
+        };
         set('h', Math.floor(left / 3.6e6));
         set('m', Math.floor(left / 6e4) % 60);
         set('s', Math.floor(left / 1e3) % 60);
         timer.dataset.expired = left === 0 ? 'true' : 'false';
       };
+      const schedule = () => window.setTimeout(() => { if (!document.hidden) paint(); schedule(); }, 1000 - (Date.now() % 1000) + 20);
       paint();
-      window.setInterval(() => { if (!document.hidden) paint(); }, 1000);
+      schedule();
+      document.addEventListener('visibilitychange', () => { if (!document.hidden) paint(); }, { passive: true });
     }
   } catch (error) { console.warn('Countdown unavailable', error); }
 
