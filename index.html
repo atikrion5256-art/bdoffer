@@ -221,6 +221,9 @@ svg { display: block; }
 .hero__stage { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr); grid-template-areas: "image rail" "pledge pledge"; gap: 12px 10px; align-items: center; }
 .hero-image-card { grid-area: image; width: 100%; margin: 0; border-radius: 20px; overflow: hidden; box-shadow: 0 18px 32px -18px rgb(5 44 135 / .6), inset 0 0 0 2px rgb(255 255 255 / .65); animation: float var(--t-ambient) ease-in-out infinite; background: #fff; }
 .hero-image-card img { display: block; width: 100%; height: auto; aspect-ratio: 1923 / 818; object-fit: cover; }
+.hero--image-only { padding: 0; background: transparent; box-shadow: none; overflow: visible; }
+.hero-image-full { margin: 0; width: 100%; border-radius: 28px; overflow: hidden; background: #fff; box-shadow: inset 0 0 0 2px rgb(255 255 255 / .9), 0 18px 38px -18px rgb(20 80 210 / .55); }
+.hero-image-full img { display: block; width: 100%; height: auto; aspect-ratio: 1923 / 818; object-fit: cover; }
 
 /* phone */
 .phone-wrap { grid-area: phone; position: relative; width: min(94%, 300px); margin-inline: auto; animation: float var(--t-ambient) ease-in-out infinite; }
@@ -614,69 +617,11 @@ svg { display: block; }
 <div class="page">
   <main>
     
-<section class="hero" aria-labelledby="hero-title">
-  <div class="hero__bg" aria-hidden="true">
-    <div class="hero__clouds"></div>
-    <div class="hero__trees hero__trees--l"></div><div class="hero__trees hero__trees--r"></div>
-    <svg class="hero__monument" viewBox="0 0 300 200" preserveAspectRatio="xMidYMax meet">
-      <path d="M150 6c10 40 30 110 46 158H104C120 116 140 46 150 6z" fill="#dcecf9"/>
-      <path d="M150 6c-3 60-14 118-46 158h20c14-40 22-96 26-158z" fill="#c4dcf1" opacity=".7"/>
-      <path d="M96 164c10-40 26-84 36-118-2 44-16 96-30 118zM204 164c-10-40-26-84-36-118 2 44 16 96 30 118z" fill="#d3e6f6" opacity=".9"/>
-      <rect x="60" y="164" width="180" height="14" rx="4" fill="#cfe3f4"/>
-    </svg>
-    <div class="hero__veil"></div><div class="hero__water"></div>
-  </div>
-
-  <div class="hero__inner">
-    <div class="hero__copy">
-      <div class="hero__top">
-        <p class="hero__kicker">একটি অফার — বেশি সুবিধা</p>
-        
-<div class="urgency">
-  <svg class="urgency__clock" viewBox="0 0 64 64" aria-hidden="true">
-    <g stroke="#ffc21a" stroke-width="4.5" stroke-linecap="round"><path d="M6 24l9 3"/><path d="M9 11l9 8"/><path d="M22 3l4 10"/></g>
-    <circle cx="38" cy="38" r="22" fill="#fff" stroke="#e5141f" stroke-width="5"/>
-    <path d="M38 24v15l9 5" fill="none" stroke="#e5141f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
-    <circle cx="38" cy="38" r="3.2" fill="#e5141f"/>
-  </svg>
-  <p class="urgency__text"><b>সীমিত</b><span>সময়ের জন্য!</span></p>
-</div>
-      </div>
-      <h1 id="hero-title" class="hero__title"><span class="d3 d3--white" data-text="ইন্টারনেট ও">ইন্টারনেট ও</span><span class="d3 d3--gold" data-text="মিনিট অফার">মিনিট অফার</span></h1>
-      <p class="hero__lead">আপনার প্রিয় অপারেটরের অফার থেকে আপনার পছন্দেরটি নির্বাচন করুন</p>
-      <ul class="hero__features">
-        <li><span class="hero__ficon hero__ficon--bolt"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M13.6 1.8 4.6 13.6h6.1l-1.4 8.6 9.6-12.6h-6.2z"/></svg></span><span>দ্রুত রিচার্জ</span></li><li><span class="hero__ficon hero__ficon--shield"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M12 1.9 4.2 5v6.2c0 4.8 3.2 8.7 7.8 10.9 4.6-2.2 7.8-6.1 7.8-10.9V5z"/><path d="m8.4 12 2.5 2.5 4.7-5.1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>নিরাপদ সার্ভিস</span></li><li><span class="hero__ficon hero__ficon--users"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="9" cy="7.6" r="3.6"/><path d="M2 20.2c0-3.9 3-6.4 7-6.4s7 2.5 7 6.4z"/><circle cx="17.4" cy="8.6" r="2.8" opacity=".7"/><path d="M16.6 13.4c3.2.1 5.4 2.1 5.4 5.6h-4.3c0-2.1-.3-3.8-1.1-5.6z" opacity=".7"/></svg></span><span>সব অপারেটর এক জায়গায়</span></li>
-      </ul>
-      <a class="button-wave btn-cta" href="#offers"><span>এখনই অফার দেখুন</span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></a>
-      <ul class="hero__trust"><li><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="11" fill="#12a150"/><path d="m6.8 12.4 3.4 3.4 7-7.4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>সহজ নির্বাচন</span></li><li><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="11" fill="#12a150"/><path d="m6.8 12.4 3.4 3.4 7-7.4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>দ্রুত অ্যাক্টিভেশন</span></li><li><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="11" fill="#12a150"/><path d="m6.8 12.4 3.4 3.4 7-7.4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>বিশ্বস্ত ও নির্ভরযোগ্য</span></li></ul>
-    </div>
-
-    <div class="hero__stage">
-      
-<figure class="hero-image-card"><img src="assets/hero/hero-image.png" alt="ইন্টারনেট ও মিনিট অফারের প্রচারচিত্র" loading="eager" fetchpriority="high"><figcaption class="sr-only">সব অপারেটরের ইন্টারনেট ও মিনিট অফার</figcaption></figure>
-      <div class="hero__rail">
-        <p class="hero__rail-title">সবচেয়ে ভালো অফার এখন এক জায়গায়!</p>
-        <nav class="hero__quick" aria-label="অপারেটর দ্রুত লিংক">
-<a class="op-quick op-quick--light" href="#gp-data" style="--q-from:#2d9cff;--q-to:#0a5ee0;--q-text:#ffffff">
-  <span class="op-quick__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M8 36C14 18 30 10 54 14c-8 3-13 9-14 17 6-5 12-6 18-4C52 42 40 52 26 52 14 52 6 46 8 36z" fill="#fff"/></svg></span>
-  <span class="op-quick__name">গ্রামীণফোন</span>
-</a>
-<a class="op-quick op-quick--dark" href="#banglalink-data" style="--q-from:#ffa12a;--q-to:#f2580a;--q-text:#ffffff">
-  <span class="op-quick__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M32 56C9 40 5 25 13 15c7-8 16-4 19 4 3-8 12-12 19-4 8 10 4 25-19 41z" fill="#3d1a00"/></svg></span>
-  <span class="op-quick__name">বাংলালিংক</span>
-</a>
-<a class="op-quick op-quick--light" href="#robi-data" style="--q-from:#ff3b55;--q-to:#c80a24;--q-text:#ffffff">
-  <span class="op-quick__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="34" r="20" fill="none" stroke="#fff" stroke-width="7"/><path d="M40 6l14 5-5 14z" fill="#ffd33d"/></svg></span>
-  <span class="op-quick__name">রবি</span>
-</a>
-<a class="op-quick op-quick--color" href="#airtel-data" style="--q-from:#ffffff;--q-to:#f3f6fb;--q-text:#c5102c">
-  <span class="op-quick__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><text x="32" y="43" font-family="var(--font-display)" font-weight="800" text-anchor="middle" font-size="21" letter-spacing="-.5" fill="#e4002b" style="font-family:var(--font-body);font-weight:700">airtel</text><path d="M26 22c4-9 15-8 16-1-3-3-9-4-16 1z" fill="#e4002b"/></svg></span>
-  <span class="op-quick__name">এয়ারটেল</span>
-</a></nav>
-      </div>
-      <p class="hero__pledge"><span class="hero__pledge-ic"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="m5 12.6 4.4 4.4L19 7.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></svg></span><span>আপনার সংযোগ,<br>আমাদের অঙ্গীকার</span></p>
-    </div>
-  </div>
+<section class="hero hero--image-only" aria-labelledby="hero-title">
+  <figure class="hero-image-full">
+    <img src="assets/hero/hero-image.png" alt="ইন্টারনেট ও মিনিট অফারের প্রচারচিত্র" loading="eager" fetchpriority="high">
+    <figcaption class="sr-only" id="hero-title">সব অপারেটরের ইন্টারনেট ও মিনিট অফার</figcaption>
+  </figure>
 </section>
     
 <section class="offers" id="offers" aria-labelledby="offers-title">
