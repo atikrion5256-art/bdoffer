@@ -1,0 +1,132 @@
+<!-- Exact logo-bobble source extracted from task AefzPN0CzY7XUQuWxREBjz -->
+
+<!-- HTML hooks used by the existing page -->
+<a class="btn-cta" href="#offers">
+  <span class="logo-stack">
+    <span class="logo-bobble logo-bobble--hero"><img class="real-logo" src="assets/logos/grameenphone.png" alt="গ্রামীণফোন"></span>
+    <span class="logo-bobble logo-bobble--hero"><img class="real-logo" src="assets/logos/banglalink.png" alt="বাংলালিংক"></span>
+    <span class="logo-bobble logo-bobble--hero"><img class="real-logo" src="assets/logos/robi.png" alt="রবি"></span>
+    <span class="logo-bobble logo-bobble--hero"><img class="real-logo" src="assets/logos/airtel.png" alt="এয়ারটেল"></span>
+  </span>
+  <span>এখনই অফার দেখুন</span>
+</a>
+
+<a class="op-quick" href="#gp-data">
+  <span class="op-quick__logo"><span class="logo-bobble logo-bobble--quick"><img class="real-logo" src="assets/logos/grameenphone.png" alt="গ্রামীণফোন"></span></span>
+  <span class="op-quick__name">গ্রামীণফোন</span>
+</a>
+
+<a class="offer-card__cta" href="#offers">
+  <span class="logo-bobble logo-bobble--card"><img class="real-logo" src="assets/logos/grameenphone.png" alt="গ্রামীণফোন"></span>
+  <span class="offer-card__cta-text">বিস্তারিত দেখুন</span>
+  <span class="offer-card__go">→</span>
+</a>
+
+<!-- CSS: exact real-logo-bobble-styles + real-logo-bobble-fixes -->
+<style>
+.real-logo { display: block; width: 100%; height: 100%; object-fit: contain; }
+.logo-bobble { position: relative; display: inline-grid; place-items: center; flex: none; overflow: hidden; border-radius: 42% 58% 52% 48% / 52% 44% 56% 48%; background: #fff; box-shadow: inset 0 1px 0 rgb(255 255 255 / .9), 0 4px 8px rgb(20 70 150 / .18); animation: logo-bob 4.2s ease-in-out infinite; }
+.logo-bobble::after { content: ''; position: absolute; inset: 8% 12% auto; height: 32%; border-radius: 50%; background: rgb(255 255 255 / .45); pointer-events: none; }
+.logo-bobble img { position: relative; z-index: 1; width: 76%; height: 76%; object-fit: contain; }
+.logo-bobble--hero { width: 2.05rem; height: 2.05rem; margin-inline-end: .18rem; background: rgb(255 255 255 / .95); }
+.logo-bobble--quick { width: 2rem; height: 2rem; }
+.logo-bobble--filter { width: 1.55rem; height: 1.55rem; margin-inline-end: 3px; }
+.logo-bobble--card { width: 2rem; height: 2rem; margin-inline-end: .25rem; }
+.logo-bobble--stack { width: 1.7rem; height: 1.7rem; margin-inline-start: -.45rem; }
+.logo-stack { display: inline-flex; align-items: center; padding-inline-start: .45rem; }
+.offer-filter button { display: inline-flex; align-items: center; justify-content: center; gap: 4px; }
+.offer-card__cta, .btn-cta, .op-quick { display: inline-flex; align-items: center; justify-content: center; }
+.offer-card__cta { gap: .35rem; }
+.op-quick { gap: .35rem; }
+@keyframes logo-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-3px) rotate(2deg); } }
+.op-quick__logo { display: grid; place-items: center; overflow: visible; }
+.op-quick__logo .logo-bobble { width: 100%; height: 100%; margin: 0; }
+.offer-card__logo > .logo-bobble { width: 100%; height: 100%; margin: 0; }
+.offer-card__cta .offer-card__thumb { display: none; }
+.offer-card__cta .logo-bobble--card { width: 1.8rem; height: 1.8rem; margin-inline-end: .05rem; }
+.btn-cta .logo-stack { gap: .02rem; padding-inline-start: .1rem; }
+.btn-cta .logo-bobble--hero { width: 1.55rem; height: 1.55rem; margin-inline-start: -.18rem; }
+.btn-cta .logo-bobble--hero:first-child { margin-inline-start: 0; }
+.pill-btn .logo-stack { gap: 0; padding-inline-start: .18rem; }
+.pill-btn .logo-bobble--stack { width: 1.28rem; height: 1.28rem; margin-inline-start: -.38rem; }
+.pill-btn .logo-bobble--stack:first-child { margin-inline-start: 0; }
+.offer-filter .logo-stack { gap: 0; padding-inline-start: .25rem; }
+.offer-filter .logo-bobble--filter { width: 1.22rem; height: 1.22rem; margin-inline-start: -.36rem; }
+.offer-filter .logo-bobble--filter:first-child { margin-inline-start: 0; }
+@media (max-width: 560px) {
+  .op-quick__logo { width: 1.65rem; height: 1.65rem; }
+  .offer-card__cta .logo-bobble--card { width: 1.55rem; height: 1.55rem; }
+  .btn-cta .logo-bobble--hero { width: 1.3rem; height: 1.3rem; }
+}
+@media (prefers-reduced-motion: reduce) { .logo-bobble { animation: none; } }
+</style>
+
+<!-- JS: exact real-logo-bobble-runtime + fix runtime -->
+<script>
+(() => {
+  'use strict';
+  const base = 'assets/logos/';
+  const assets = {
+    gp: ['grameenphone.png', 'গ্রামীণফোন'],
+    grameenphone: ['grameenphone.png', 'গ্রামীণফোন'],
+    banglalink: ['banglalink.png', 'বাংলালিংক'],
+    robi: ['robi.png', 'রবি'],
+    airtel: ['airtel.png', 'এয়ারটেল']
+  };
+  const logo = (key, size, extra = '') => {
+    const item = assets[key];
+    if (!item) return '';
+    const image = document.createElement('img');
+    image.className = 'real-logo';
+    image.src = base + item[0];
+    image.alt = item[1];
+    image.loading = 'eager';
+    image.onerror = () => { image.closest('.logo-bobble')?.remove(); };
+    const wrap = document.createElement('span');
+    wrap.className = `logo-bobble logo-bobble--${size} ${extra}`;
+    wrap.setAttribute('aria-hidden', 'true');
+    wrap.append(image);
+    return wrap;
+  };
+  const stack = (size) => {
+    const wrap = document.createElement('span');
+    wrap.className = 'logo-stack';
+    ['gp', 'banglalink', 'robi', 'airtel'].forEach(key => wrap.append(logo(key, size)));
+    return wrap;
+  };
+  const keyFor = (value) => {
+    const text = value.toLowerCase();
+    if (text.includes('গ্রামীণ') || text.includes('grameen')) return 'gp';
+    if (text.includes('বাংলালিংক') || text.includes('banglalink')) return 'banglalink';
+    if (text.includes('রবি') || text.includes('robi')) return 'robi';
+    if (text.includes('এয়ারটেল') || text.includes('airtel')) return 'airtel';
+    return null;
+  };
+  document.querySelectorAll('.op-quick').forEach(button => {
+    const key = keyFor(button.textContent || button.getAttribute('href') || '');
+    const old = button.querySelector('.op-quick__logo');
+    if (old && key) old.replaceChildren(logo(key, 'quick'));
+  });
+  document.querySelectorAll('.offer-card').forEach(card => {
+    const key = keyFor(card.textContent || card.id);
+    if (!key) return;
+    const existing = card.querySelector('.offer-card__logo');
+    if (existing) existing.replaceChildren(logo(key, 'card'));
+    const cta = card.querySelector('.offer-card__cta');
+    if (cta && !cta.querySelector('.logo-bobble')) cta.prepend(logo(key, 'card'));
+  });
+  const heroCta = document.querySelector('.btn-cta');
+  if (heroCta && !heroCta.querySelector('.logo-stack')) heroCta.prepend(stack('hero'));
+  document.querySelectorAll('.pill-btn').forEach(button => {
+    if (!button.querySelector('.logo-stack')) button.prepend(stack('stack'));
+  });
+  document.querySelectorAll('.offer-filter button').forEach(button => {
+    const key = button.dataset.filter;
+    if (key === 'all') button.prepend(stack('filter'));
+    else if (assets[key]) button.prepend(logo(key, 'filter'));
+  });
+  document.querySelectorAll('.offer-card__cta .logo-bobble').forEach(() => {
+    document.querySelectorAll('.offer-card__cta .offer-card__thumb').forEach(icon => icon.remove());
+  });
+})();
+</script>

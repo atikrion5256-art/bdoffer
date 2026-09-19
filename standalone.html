@@ -1,0 +1,1152 @@
+<!doctype html>
+<html lang="bn" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ইন্টারনেট ও মিনিট অফার — সব অপারেটর এক জায়গায় | bdoffer.online</title>
+<meta name="description" content="গ্রামীণফোন, বাংলালিংক, রবি ও এয়ারটেলের ইন্টারনেট ও মিনিট অফার এক জায়গায় দেখুন এবং আপনার পছন্দেরটি বেছে নিন।">
+<meta name="theme-color" content="#2f88ee">
+<meta property="og:title" content="ইন্টারনেট ও মিনিট অফার — সব অপারেটর এক জায়গায় | bdoffer.online">
+<meta property="og:description" content="গ্রামীণফোন, বাংলালিংক, রবি ও এয়ারটেলের ইন্টারনেট ও মিনিট অফার এক জায়গায় দেখুন এবং আপনার পছন্দেরটি বেছে নিন।">
+<meta property="og:type" content="website">
+<script>document.documentElement.className='js'</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600;700;800&family=Caveat:wght@400;600&family=Hind+Siliguri:wght@400;500;600;700&display=swap">
+<style>
+/* ===== DESIGN TOKENS ===== */
+:root {
+  /* color */
+  --c-ink: #0d1b4c;
+  --c-ink-2: #22336f;
+  --c-muted: #55668f;
+  --c-page: #eef6fe;
+  --c-surface: #fff;
+  --c-blue: #0a5ee0;
+  --c-blue-2: #2d9cff;
+  --c-sky: #7ac2fd;
+  --c-red: #e8102f;
+  --c-red-deep: #c30a24;
+  --c-orange: #ff6a00;
+  --c-orange-text: #f0470f;
+  --c-gold: #ffc21a;
+  --c-green: #12a150;
+  --c-navy-deep: #050b24;
+  --c-border: rgb(255 255 255 / .75);
+  --c-line: rgb(90 140 210 / .22);
+
+  /* spacing */
+  --sp-xs: .25rem; --sp-sm: .5rem; --sp-md: .75rem; --sp-lg: 1rem; --sp-xl: 1.5rem; --sp-2xl: 2.25rem;
+  --section-gap: clamp(.75rem, 2.6vw, 1.4rem);
+  --page-pad: clamp(.6rem, 2.4vw, 1.5rem);
+  --page-max: 68rem;
+
+  /* radius */
+  --r-sm: 10px; --r-md: 16px; --r-lg: 22px; --r-xl: 30px; --r-pill: 999px;
+
+  /* shadow */
+  --sh-subtle: 0 2px 6px -2px rgb(20 50 120 / .18);
+  --sh-card: 0 14px 24px -16px rgb(20 60 150 / .45), 0 2px 0 rgb(255 255 255 / .9) inset;
+  --sh-elevated: 0 24px 44px -18px rgb(10 50 160 / .5);
+  --sh-glow: 0 0 0 4px rgb(255 255 255 / .55), 0 10px 24px -6px var(--op-glow, rgb(30 130 255 / .45));
+
+  /* type */
+  --font-body: 'Hind Siliguri', 'Noto Sans Bengali', 'Kohinoor Bangla', 'Nirmala UI', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Baloo Da 2', 'Hind Siliguri', 'Noto Sans Bengali', 'Kohinoor Bangla', 'Nirmala UI', system-ui, sans-serif;
+  --font-script: 'Caveat', 'Segoe Script', 'Bradley Hand', cursive;
+  --fs-xs: .72rem; --fs-sm: .82rem; --fs-body: .95rem; --fs-label: .88rem;
+  --fs-heading: clamp(1.1rem, 4.4vw, 1.5rem);
+  --fs-display: clamp(2.8rem, 15.4vw, 5rem);
+  --fs-cta: clamp(1.15rem, 5vw, 1.4rem);
+
+  /* motion */
+  --t-fast: 180ms; --t-normal: 320ms; --t-slow: 600ms; --t-ambient: 7s;
+  --ease: cubic-bezier(.22, .8, .3, 1);
+
+  /* z */
+  --z-sticky: 30;
+}
+
+@media (min-width: 800px) {
+  :root { --fs-display: clamp(3.6rem, 8.3vw, 6.1rem); --fs-body: 1rem; }
+}
+
+/* ===== BASE ===== */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; scroll-padding-block: 1rem; }
+body {
+  margin: 0; min-height: 100dvh;
+  font-family: var(--font-body); font-size: var(--fs-body); line-height: 1.5; color: var(--c-ink);
+  background:
+    radial-gradient(60rem 30rem at 50% -10%, #d9ecff, transparent 70%),
+    linear-gradient(180deg, #f4f9ff, var(--c-page) 40%, #e8f2fc);
+  background-attachment: fixed;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, h4, p, ul, figure { margin: 0; padding: 0; }
+ul { list-style: none; }
+a { color: inherit; text-decoration: none; -webkit-tap-highlight-color: transparent; }
+svg { display: block; }
+:focus-visible { outline: 3px solid #0a5ee0; outline-offset: 3px; border-radius: 8px; }
+.sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+.skip { position: absolute; inset-inline-start: .5rem; top: -4rem; z-index: 99; padding: .6rem 1rem; background: #fff; border-radius: var(--r-sm); box-shadow: var(--sh-elevated); }
+.skip:focus { top: .5rem; }
+
+.page { width: min(100%, var(--page-max)); margin-inline: auto; padding: var(--page-pad) var(--page-pad) 0; }
+.page > main { display: grid; gap: var(--section-gap); }
+
+/* reveal (progressive: only hides when JS is present) */
+.js [data-reveal] { opacity: 0; transform: translateY(14px); }
+.js [data-reveal].is-in { opacity: 1; transform: none; transition: opacity var(--t-slow) var(--ease), transform var(--t-slow) var(--ease); transition-delay: calc(var(--i, 0) * 70ms); }
+
+@keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+@keyframes drift { from { transform: translateX(-3%); } to { transform: translateX(3%); } }
+@keyframes sweep { 0%, 55% { transform: translateX(-130%) skewX(-20deg); } 100% { transform: translateX(330%) skewX(-20deg); } }
+@keyframes breathe { 0%, 100% { box-shadow: var(--cta-sh); } 50% { box-shadow: var(--cta-sh-2); } }
+@keyframes tick { 0% { transform: scale(1); } 12% { transform: scale(1.09); } 40%, 100% { transform: scale(1); } }
+@keyframes wobble { 0%, 100% { transform: rotate(-5deg); } 50% { transform: rotate(-3deg) translateY(-2px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  .js [data-reveal] { opacity: 1; transform: none; }
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: relative; isolation: isolate; overflow: hidden;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #62b6fb 0%, #a3d8fd 32%, #d9eefd 56%, #98cdf8 76%, #3f96f0 100%);
+  box-shadow: inset 0 0 0 2px rgb(255 255 255 / .9), 0 0 0 2px rgb(58 140 255 / .65), 0 22px 38px -16px rgb(20 80 210 / .55);
+}
+.hero__bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+.hero__bg > * { position: absolute; }
+.hero__clouds {
+  inset: -4% -10% 34% -10%;
+  background:
+    radial-gradient(ellipse 24% 13% at 14% 24%, #fff, transparent 70%),
+    radial-gradient(ellipse 28% 14% at 48% 9%, #fff, transparent 70%),
+    radial-gradient(ellipse 22% 12% at 84% 26%, #fff, transparent 70%),
+    radial-gradient(ellipse 20% 10% at 62% 48%, rgb(255 255 255 / .8), transparent 70%);
+  animation: drift 26s ease-in-out infinite alternate;
+}
+.hero__trees { top: 6%; bottom: 14%; width: 40%; filter: blur(2.5px); opacity: .9;
+  background:
+    radial-gradient(ellipse 62% 20% at 40% 18%, #5dbb52, #3f9a45 58%, transparent 100%),
+    radial-gradient(ellipse 66% 24% at 30% 46%, #3f9a46, #2b7d39 60%, transparent 100%),
+    radial-gradient(ellipse 60% 24% at 46% 80%, #4aa54b, #277636 60%, transparent 100%); }
+.hero__trees--l { left: -9%; mask-image: linear-gradient(90deg, #000 45%, transparent); }
+.hero__trees--r { right: -9%; mask-image: linear-gradient(270deg, #000 45%, transparent); }
+.hero__monument { left: 30%; width: 44%; bottom: 17%; height: 44%; opacity: .78; filter: blur(1.2px); }
+.hero__veil { inset: 0; background: radial-gradient(ellipse 60% 55% at 26% 46%, rgb(255 255 255 / .42), transparent 70%); }
+.hero__water { inset: auto 0 0 0; height: 26%;
+  background:
+    repeating-linear-gradient(180deg, rgb(255 255 255 / .12) 0 1.5px, transparent 1.5px 11px),
+    linear-gradient(180deg, rgb(120 200 255 / 0), rgb(90 175 252 / .75) 38%, #2482ec); }
+
+.hero__inner { position: relative; display: grid; gap: 14px; padding: 16px 14px 16px; }
+.hero__copy, .hero__stage { animation: rise .7s var(--ease) both; }
+.hero__stage { animation-delay: .12s; }
+
+.hero__top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+.hero__kicker { max-width: 11em; padding-top: .55rem; font-size: .9rem; font-weight: 600; line-height: 1.25; color: var(--c-ink); text-shadow: 0 0 10px rgb(255 255 255 / .9); }
+
+/* urgency bubble */
+.urgency { position: relative; margin: 2px 6px 0 0; padding-left: 38px; animation: wobble 5s ease-in-out infinite; transform: rotate(-5deg); flex: none; }
+.urgency__clock { position: absolute; left: -4px; top: 50%; width: 50px; height: 50px; translate: 0 -54%; z-index: 1; filter: drop-shadow(0 3px 3px rgb(120 0 10 / .35)); }
+.urgency__text { position: relative; display: grid; padding: 6px 12px 8px 22px; border-radius: 14px; font-family: var(--font-display);
+  background: linear-gradient(180deg, #ff3030, #d0060f); box-shadow: inset 0 2px 0 rgb(255 255 255 / .35), 0 8px 14px -6px rgb(180 0 10 / .6); }
+.urgency__text::after { content: ''; position: absolute; left: 34%; bottom: -9px; width: 16px; height: 12px; background: #cf070f; clip-path: polygon(0 0, 100% 0, 30% 100%); }
+.urgency__text b { font-size: 1.3rem; line-height: 1.1; font-weight: 800; color: var(--c-gold); text-shadow: 0 2px 0 rgb(120 0 0 / .45); }
+.urgency__text span { font-size: .86rem; line-height: 1.1; font-weight: 700; color: #fff; }
+
+/* 3D headline */
+.hero__title { display: grid; justify-items: start; margin-top: -.2rem; font-size: var(--fs-display); }
+.d3 {
+  --stroke: .15em;
+  position: relative; isolation: isolate; display: block; width: max-content; max-width: 100%;
+  padding-bottom: .1em; font-family: var(--font-display); font-weight: 800; font-size: 1em; line-height: 1.04; letter-spacing: -.005em;
+  color: transparent; /* real text stays selectable; ::before = rim + extrusion, ::after = lit face */
+}
+.d3::after {
+  content: attr(data-text) / ''; position: absolute; inset: 0 0 auto 0; z-index: 1; padding-bottom: inherit; letter-spacing: inherit;
+  background: var(--face); -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.d3::before {
+  content: attr(data-text) / ''; position: absolute; inset: 0 0 auto 0; z-index: -1; padding-bottom: inherit;
+  color: var(--edge); -webkit-text-stroke: var(--stroke) var(--edge); paint-order: stroke fill; letter-spacing: inherit;
+  text-shadow:
+    0 .02em 0 var(--edge-2), 0 .04em 0 var(--edge-2), 0 .06em 0 var(--edge-2), 0 .08em 0 var(--edge-2),
+    0 .10em 0 var(--edge-2), 0 .12em 0 var(--edge-2), 0 .14em 0 var(--edge-2), 0 .16em 0 var(--edge-2),
+    0 .22em .14em var(--drop);
+}
+.d3--white { --edge: #1b52e6; --edge-2: #0c2ea6; --drop: rgb(8 30 130 / .5);
+  --face: linear-gradient(180deg, #fff 30%, #d9e7ff 100%); }
+.d3--gold { --edge: #b4150b; --edge-2: #7d0d05; --drop: rgb(120 20 0 / .5); margin-top: -.06em;
+  --face: linear-gradient(180deg, #fff6a8 0%, #ffd21f 34%, #ff9a00 68%, #ff5a00 100%); }
+
+.hero__lead { max-width: 30ch; font-size: 1.02rem; font-weight: 600; line-height: 1.4; text-shadow: 0 0 12px rgb(255 255 255 / .95), 0 1px 0 rgb(255 255 255 / .8); }
+
+.hero__features { display: grid; grid-template-columns: repeat(3, 1fr); }
+.hero__features li { display: grid; justify-items: center; align-content: start; gap: 4px; padding: 2px 6px; text-align: center; font-size: .78rem; font-weight: 600; line-height: 1.25; text-shadow: 0 0 8px rgb(255 255 255 / .9); }
+.hero__features li + li { border-inline-start: 1.5px solid rgb(13 27 76 / .18); }
+.hero__ficon { font-size: 1.7rem; color: var(--c-blue); filter: drop-shadow(0 2px 2px rgb(10 60 200 / .3)); }
+.hero__ficon--users { color: #1b8cf2; }
+
+/* CTA */
+.btn-cta {
+  --cta-sh: 0 12px 22px -8px rgb(220 0 30 / .65), inset 0 2px 0 rgb(255 255 255 / .5), inset 0 -3px 0 rgb(0 0 0 / .18);
+  --cta-sh-2: 0 14px 30px -6px rgb(240 0 40 / .8), inset 0 2px 0 rgb(255 255 255 / .5), inset 0 -3px 0 rgb(0 0 0 / .18);
+  position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: .55rem;
+  min-height: 3.6rem; padding: 0 1.4rem; border-radius: var(--r-pill);
+  font: 800 var(--fs-cta)/1 var(--font-display); color: #fff; text-shadow: 0 2px 2px rgb(110 0 15 / .45);
+  background: linear-gradient(180deg, #ff3a55 0%, #e8102f 52%, #cf0724 100%);
+  box-shadow: var(--cta-sh); animation: breathe 4.5s ease-in-out infinite;
+  transition: transform var(--t-fast) var(--ease), filter var(--t-fast);
+}
+.btn-cta::before { content: ''; position: absolute; inset: 0 0 52% 0; background: linear-gradient(180deg, rgb(255 255 255 / .32), rgb(255 255 255 / 0)); }
+.btn-cta::after { content: ''; position: absolute; top: 0; bottom: 0; left: 0; width: 26%; background: linear-gradient(90deg, transparent, rgb(255 255 255 / .55), transparent); animation: sweep 4.5s ease-in-out infinite; }
+.btn-cta svg { position: relative; font-size: 1.35em; }
+.btn-cta:active { transform: translateY(2px) scale(.985); filter: brightness(.96); }
+
+.hero__trust { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 10px; padding: 8px 12px; border-radius: 18px;
+  background: rgb(255 255 255 / .86); box-shadow: 0 10px 20px -14px rgb(10 50 160 / .6), inset 0 1px 0 #fff; -webkit-backdrop-filter: blur(8px); backdrop-filter: blur(8px); }
+.hero__trust li { display: flex; align-items: center; gap: 5px; font-size: .78rem; font-weight: 600; }
+.hero__trust svg { font-size: 1.25rem; flex: none; }
+@media (min-width: 420px) { .hero__trust li + li { padding-inline-start: 10px; border-inline-start: 1.5px solid rgb(13 27 76 / .15); } }
+
+/* stage */
+.hero__stage { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .85fr); grid-template-areas: "phone rail" "pledge pledge"; gap: 12px 10px; align-items: center; }
+
+/* phone */
+.phone-wrap { grid-area: phone; position: relative; width: min(94%, 300px); margin-inline: auto; animation: float var(--t-ambient) ease-in-out infinite; }
+.phone { position: relative; aspect-ratio: 9 / 18.6; padding: 3.5%; border-radius: 13% / 6.3%;
+  background: linear-gradient(135deg, #e4eaf3 0%, #8391a8 17%, #1c2333 40%, #0d121c 62%, #75849b 84%, #dbe2ed 100%);
+  box-shadow: 0 30px 40px -16px rgb(5 30 110 / .6), 0 0 0 1px rgb(255 255 255 / .35) inset;
+  transform: perspective(1400px) rotateY(-9deg) rotateX(3deg) rotate(3.5deg); display: grid; }
+.phone::before { content: ''; position: absolute; inset: 1.5%; border-radius: 12% / 5.8%; background: #070b14; }
+.phone__btn { position: absolute; width: 1.4%; border-radius: 2px; background: #5d6a80; }
+.phone__btn--l1 { left: -1%; top: 18%; height: 5%; } .phone__btn--l2 { left: -1%; top: 26%; height: 9%; } .phone__btn--r { right: -1%; top: 24%; height: 13%; }
+.phone__screen { position: relative; container-type: inline-size; display: flex; flex-direction: column; min-height: 0; overflow: hidden;
+  border-radius: 10.5% / 5%; background: linear-gradient(180deg, #fbfdff, #e6f0fa); color: var(--c-ink); }
+.phone__status { display: flex; justify-content: space-between; align-items: center; padding: 4cqw 8cqw 0; font-size: 3.4cqw; font-weight: 700; }
+.phone__status svg { font-size: 4.2cqw; }
+.phone__island { width: 28cqw; height: 7.6cqw; border-radius: 99px; background: #05070d; }
+.phone__head { display: grid; gap: .6cqw; padding: 4.5cqw 6cqw 2.5cqw; }
+.phone__head strong { font-size: 5.2cqw; line-height: 1.25; }
+.phone__head small { font-size: 3cqw; color: var(--c-muted); line-height: 1.3; }
+.phone__tabs { display: grid; grid-template-columns: 1fr 1fr; margin: 0 5cqw; padding: 1.2cqw; border-radius: 99px; background: #fff; box-shadow: 0 0 0 1px rgb(20 80 180 / .12); font-size: 3.2cqw; font-weight: 700; text-align: center; }
+.phone__tabs b { padding: 1.6cqw 0; border-radius: 99px; color: #fff; background: linear-gradient(180deg, #2d9cff, #0a5ee0); }
+.phone__tabs span { padding: 1.6cqw 0; color: var(--c-muted); }
+.phone__grid { flex: 1; display: grid; grid-template-columns: 1fr 1fr; align-content: start; gap: 3.4cqw; padding: 4.5cqw 5cqw; }
+.phone__tile { aspect-ratio: 1 / 1.12; display: grid; place-content: center; justify-items: center; gap: .8cqw; border-radius: 4.5cqw; text-align: center; line-height: 1.2;
+  background: linear-gradient(160deg, var(--op-tint), #fff); box-shadow: 0 0 0 1px rgb(var(--op-rgb) / .22), 0 3cqw 5cqw -3cqw var(--op-glow); }
+.phone__tile strong { font-size: 4cqw; } .phone__tile em { font-style: normal; font-size: 3cqw; font-weight: 600; color: var(--c-blue); }
+.phone__logo { display: grid; place-items: center; width: 16cqw; height: 16cqw; padding: 1.6cqw; border-radius: 50%; background: #fff; box-shadow: 0 1.5cqw 3cqw -1cqw var(--op-glow); }
+.phone__nav { display: grid; grid-template-columns: repeat(4, 1fr); padding: 3cqw 3cqw 6cqw; background: #fff; box-shadow: 0 -2px 10px rgb(20 60 140 / .08); }
+.phone__nav span { display: grid; justify-items: center; gap: .5cqw; font-size: 5cqw; color: #8fa0bf; }
+.phone__nav small { font-size: 2.7cqw; font-weight: 600; } .phone__nav .is-on { color: var(--c-blue); }
+.phone-wrap__reflection { position: absolute; left: 6%; right: 6%; bottom: -6%; height: 12%; border-radius: 50%; background: radial-gradient(ellipse, rgb(255 255 255 / .7), rgb(80 160 255 / .3) 55%, transparent 72%); filter: blur(6px); z-index: -1; }
+
+/* rail */
+.hero__rail { grid-area: rail; display: grid; gap: 8px; }
+.hero__rail-title { justify-self: center; position: relative; padding-bottom: 6px; font: 800 .82rem/1.25 var(--font-display); text-align: center; transform: rotate(-5deg); text-shadow: 0 0 10px rgb(255 255 255 / .95); }
+.hero__rail-title::after { content: ''; position: absolute; left: 12%; right: 0; bottom: 0; height: 3px; border-radius: 3px; background: linear-gradient(90deg, transparent, #e8102f 25%, #e8102f); transform: rotate(-2deg); }
+.hero__quick { display: grid; gap: 7px; }
+.op-quick { position: relative; overflow: hidden; display: grid; justify-items: center; align-content: center; gap: 1px; min-height: 3.6rem; padding: 6px 8px; border-radius: 16px;
+  color: var(--q-text); background: linear-gradient(180deg, var(--q-from), var(--q-to)); border: 1.5px solid rgb(255 255 255 / .75);
+  box-shadow: 0 10px 16px -10px rgb(0 30 120 / .7), inset 0 2px 0 rgb(255 255 255 / .55), inset 0 -3px 0 rgb(0 0 0 / .13); transition: transform var(--t-fast) var(--ease); }
+.op-quick::before { content: ''; position: absolute; inset: 0 0 55% 0; background: linear-gradient(180deg, rgb(255 255 255 / .3), transparent); }
+.op-quick__logo { position: relative; width: 1.7rem; height: 1.7rem; } .op-quick__logo svg { width: 100%; height: 100%; }
+.op-quick__name { position: relative; font: 800 .8rem/1.1 var(--font-display); text-shadow: 0 1px 2px rgb(0 20 90 / .4); }
+.op-quick--color { text-shadow: none; } .op-quick--color .op-quick__name { text-shadow: none; }
+.op-quick:active { transform: scale(.97); }
+
+.hero__pledge { grid-area: pledge; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 10px 14px; border-radius: 18px;
+  font: 700 .95rem/1.25 var(--font-display); color: #fff; background: linear-gradient(160deg, rgb(12 30 84 / .94), rgb(6 12 36 / .96));
+  box-shadow: 0 14px 24px -14px rgb(0 20 90 / .8), inset 0 0 0 1.5px rgb(130 190 255 / .45), inset 0 1px 0 rgb(255 255 255 / .25); }
+.hero__pledge-ic { display: grid; place-items: center; flex: none; width: 1.9rem; height: 1.9rem; border-radius: 50%; font-size: 1.15rem; color: var(--c-navy-deep); background: #fff; }
+
+/* tablet+ */
+@media (min-width: 620px) {
+  .hero__inner { padding: 22px 24px 22px; }
+  .hero__features li { display: flex; justify-content: center; align-items: center; text-align: start; gap: 8px; font-size: .84rem; }
+  .hero__ficon { font-size: 1.9rem; }
+}
+
+@media (min-width: 620px) and (max-width: 799px) { .hero__stage { width: min(100%, 30rem); margin-inline: auto; } .hero__copy { width: min(100%, 36rem); margin-inline: auto; } }
+
+/* desktop composition ≈ reference */
+@media (min-width: 800px) {
+  .hero__inner { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); align-items: center; gap: 0; padding: 26px 26px 26px 34px; min-height: 31rem; }
+  .hero__copy { display: grid; gap: 14px; padding-inline-end: 8px; }
+  .hero__top { justify-content: flex-start; gap: 1.6rem; }
+  .hero__kicker { max-width: none; font-size: 1rem; }
+  .urgency { margin-inline-start: .4rem; }
+  .urgency__text b { font-size: 1.55rem; } .urgency__text span { font-size: 1rem; }
+  .urgency__clock { width: 62px; height: 62px; }
+  .hero__lead { max-width: 24ch; font-size: 1.28rem; font-weight: 700; }
+  .hero__features { display: flex; gap: 0; justify-content: flex-start; max-width: 32rem; }
+  .hero__features li { flex: 1; justify-content: flex-start; padding: 0 12px; }
+  .hero__features li:first-child { padding-inline-start: 0; }
+  .btn-cta { max-width: 27.5rem; min-height: 4.1rem; }
+  .hero__trust { justify-content: flex-start; max-width: 29rem; border-radius: var(--r-pill); padding: 8px 16px; }
+  .hero__trust li { font-size: .85rem; }
+  .hero__stage { grid-template-columns: minmax(0, 1.28fr) minmax(0, .82fr); grid-template-areas: "phone rail" "phone pledge"; gap: 14px 12px; align-items: start; }
+  .phone-wrap { margin-top: -.5rem; }
+  .hero__rail { padding-top: .2rem; } .hero__rail-title { font-size: .95rem; }
+  .op-quick { min-height: 4.3rem; } .op-quick__logo { width: 2rem; height: 2rem; } .op-quick__name { font-size: .92rem; }
+  .hero__pledge { align-self: end; font-size: 1rem; }
+}
+@media (min-width: 1100px) { .hero__inner { min-height: 32.5rem; } }
+
+@media (min-width: 800px) and (max-width: 1039px) {
+  .hero__pledge { flex-direction: column; gap: 6px; padding: 10px 8px; font-size: .84rem; text-align: center; }
+}
+
+/* ===== OFFERS ===== */
+.offers {
+  padding: clamp(12px, 3vw, 26px) clamp(10px, 2.6vw, 24px) clamp(12px, 2.6vw, 22px);
+  border-radius: 28px;
+  background: radial-gradient(40rem 14rem at 50% 0, #e3f2ff, transparent 70%), linear-gradient(180deg, rgb(255 255 255 / .96), rgb(238 247 255 / .92));
+  box-shadow: inset 0 1px 0 #fff, 0 0 0 1px rgb(120 175 235 / .28), 0 24px 40px -28px rgb(30 90 200 / .45);
+  display: grid; gap: clamp(10px, 2.4vw, 18px);
+}
+
+.sec-head { position: relative; display: grid; justify-items: center; gap: 6px; padding: 4px 0 2px; text-align: center; }
+.sec-head::before, .sec-head::after { content: ''; position: absolute; top: 44%; width: 22%; height: 46px; opacity: .8; display: none;
+  background: radial-gradient(circle, rgb(60 150 230 / .45) 1.3px, transparent 1.6px) 0 0 / 9px 9px;
+  mask-image: linear-gradient(90deg, #000, transparent); -webkit-mask-image: linear-gradient(90deg, #000, transparent); }
+.sec-head::before { left: 2%; } .sec-head::after { right: 2%; transform: scaleX(-1); }
+.sec-head__badge { padding: .28rem 1.2rem; border-radius: var(--r-pill); font-size: .86rem; font-weight: 600; color: #0b5f9c;
+  background: linear-gradient(180deg, #e2f6ff, #c6ebfb); box-shadow: inset 0 0 0 1.5px rgb(90 190 235 / .7), 0 6px 12px -8px rgb(20 130 200 / .6); }
+.sec-head__title { font: 800 clamp(1.75rem, 8.2vw, 2.9rem)/1.15 var(--font-display); letter-spacing: -.005em; text-shadow: 0 2px 0 rgb(255 255 255 / .9), 0 5px 8px rgb(20 60 160 / .22); }
+.w-blue { color: #1548cc; } .w-ink { color: #14297d; } .w-orange { color: #ff4a16; }
+.sec-head__sub { font-size: .92rem; font-weight: 500; color: var(--c-ink-2); }
+
+/* subsection panel */
+.sub { --sub-a: #eaf5ff; --sub-b: #f7fbff; --sub-line: rgb(90 165 235 / .3);
+  --s-main: #0a6cf0; --s-end: #38aaff; --s-glow: rgb(20 130 255 / .5);
+  padding: clamp(10px, 2.4vw, 16px); border-radius: 24px;
+  background: linear-gradient(160deg, var(--sub-a), var(--sub-b)); box-shadow: inset 0 0 0 1px var(--sub-line), inset 0 1px 0 #fff; display: grid; gap: 12px; }
+.sub--voice { --sub-a: #fff1e3; --sub-b: #fffaf4; --sub-line: rgb(255 160 70 / .32); --s-main: #ff6a00; --s-end: #ffa61f; --s-glow: rgb(255 120 20 / .5); }
+
+.sub-head { position: relative; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px 12px; }
+.sub-head__icon { display: grid; place-items: center; width: 3.1rem; height: 3.1rem; border-radius: 15px; font-size: 1.9rem; color: #fff;
+  background: linear-gradient(160deg, var(--s-end), var(--s-main)); box-shadow: 0 10px 16px -8px var(--s-glow), inset 0 2px 0 rgb(255 255 255 / .5), inset 0 -3px 0 rgb(0 0 0 / .14); }
+.sub--data .sub-head__icon { background: linear-gradient(160deg, #2aa4c8, #0b5f92); }
+.sub-head__text { display: grid; gap: 1px; justify-items: start; min-width: 0; }
+.sub-head__title { font: 800 clamp(1.08rem, 4.8vw, 1.5rem)/1.2 var(--font-display); color: #0e1b55; }
+.accent { color: #ff5a10; }
+.sub-head__sub { font-size: .8rem; color: #2c3d84; font-weight: 500; }
+.pill-btn { display: inline-flex; align-items: center; gap: .4rem; min-height: 2rem; margin-top: 4px; padding: 0 .85rem; border-radius: var(--r-pill);
+  font-size: .8rem; font-weight: 600; color: #fff; background: linear-gradient(180deg, #0f7e9c, #0a4f72); box-shadow: 0 8px 12px -8px rgb(6 70 110 / .8), inset 0 1px 0 rgb(255 255 255 / .35); }
+.sub--voice .pill-btn { background: linear-gradient(180deg, #ff8a1e, #f05a00); box-shadow: 0 8px 12px -8px rgb(220 90 0 / .8), inset 0 1px 0 rgb(255 255 255 / .4); }
+.pill-btn svg { font-size: 1rem; }
+.sub-head__script { display: none; text-align: right; color: #7a95bd; }
+.sub-head__script em { display: block; font: 400 1.5rem/1 var(--font-script); transform: rotate(-4deg); color: #6f95c9; }
+.sub-head__script span { font-size: .78rem; }
+.sub--voice .sub-head__script em { color: #f0a25c; } .sub--voice .sub-head__script { color: #c79a70; }
+.sub-head__badge { position: relative; display: grid; place-items: center; align-content: center; width: 3.6rem; height: 3.6rem; border-radius: 50%; color: #fff; font-family: var(--font-display);
+  background: radial-gradient(circle at 35% 25%, var(--s-end), var(--s-main) 70%); box-shadow: 0 0 0 4px rgb(255 255 255 / .6), 0 12px 20px -8px var(--s-glow), inset 0 3px 0 rgb(255 255 255 / .45), inset 0 -5px 8px rgb(0 0 0 / .15); }
+.sub-head__badge svg { font-size: 1.35rem; } .sub-head__badge b { font-size: .8rem; line-height: 1; font-weight: 800; }
+
+/* card grid */
+.offer-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+
+.offer-card {
+  position: relative; isolation: isolate; display: flex; flex-direction: column; align-items: center; gap: 1px; padding: 12px 8px 8px;
+  border-radius: 20px; border: 1.5px solid transparent; text-align: center;
+  background:
+    linear-gradient(165deg, var(--op-tint) 0%, var(--op-tint-2) 100%) padding-box,
+    linear-gradient(150deg, var(--op-main), rgb(var(--op-rgb) / .18) 55%, var(--op-end)) border-box;
+  box-shadow: 0 16px 24px -16px var(--op-glow), 0 2px 0 rgb(255 255 255 / .95) inset;
+}
+.offer-card::before { content: ''; position: absolute; z-index: -1; inset: 8px 8px auto auto; width: 42%; height: 46%; opacity: .5;
+  background: radial-gradient(circle, rgb(var(--op-rgb) / .35) 1.2px, transparent 1.5px) 0 0 / 8px 8px; mask-image: radial-gradient(circle at 100% 0, #000, transparent 70%); -webkit-mask-image: radial-gradient(circle at 100% 0, #000, transparent 70%); }
+
+.offer-card__op { margin-top: .35rem; font: 600 .86rem/1.2 var(--font-body); color: #16245e; }
+.offer-card__amt { display: flex; align-items: baseline; justify-content: center; gap: .25em; font: 800 clamp(1.3rem, 6.4vw, 1.9rem)/1.15 var(--font-display); white-space: nowrap;
+  filter: drop-shadow(0 2px 0 rgb(255 255 255 / .95)) drop-shadow(0 4px 5px var(--op-glow)); }
+.offer-card__amt span, .offer-card__amt small { background: linear-gradient(180deg, var(--op-amt-b), var(--op-amt-a)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.offer-card__amt small { font-size: .7em; font-weight: 800; }
+.offer-card__label { min-height: 1.1rem; margin-bottom: .45rem; font-size: .72rem; font-weight: 700; color: var(--op-ink); }
+.offer-card__cta { display: flex; align-items: center; gap: 5px; width: 100%; min-height: 2.75rem; margin-top: auto; padding: 3px 3px 3px 8px; border-radius: var(--r-pill);
+  font-size: .78rem; font-weight: 600; color: #26235a; text-align: start; background: linear-gradient(180deg, #fff, #f2f6fc);
+  box-shadow: 0 8px 14px -10px rgb(30 50 110 / .6), inset 0 1px 0 #fff, 0 0 0 1px rgb(var(--op-rgb) / .1); transition: transform var(--t-fast) var(--ease); }
+.offer-card__thumb { font-size: 1.15rem; flex: none; filter: drop-shadow(0 2px 2px rgb(200 140 0 / .35)); }
+.offer-card__cta-text { flex: 1; line-height: 1.2; }
+.offer-card__go { display: grid; place-items: center; flex: none; width: 2.2rem; height: 2.2rem; border-radius: 50%; font-size: 1.1rem; color: #fff;
+  background: linear-gradient(160deg, var(--op-end), var(--op-main)); box-shadow: 0 0 0 3px rgb(255 255 255 / .8), 0 8px 12px -4px var(--op-glow), inset 0 2px 0 rgb(255 255 255 / .4); }
+.offer-card__cta:active { transform: scale(.97); }
+.offer-card:target { outline: 3px solid var(--op-main); outline-offset: 3px; }
+
+@media (min-width: 620px) {
+  .sec-head::before, .sec-head::after { display: block; }
+  .sub-head { grid-template-columns: auto 1fr auto auto; gap: 14px; }
+  .sub-head__script { display: block; padding-inline-end: .5rem; }
+  .sub-head__icon { width: 3.6rem; height: 3.6rem; font-size: 2.1rem; }
+  .sub-head__badge { width: 4.6rem; height: 4.6rem; } .sub-head__badge svg { font-size: 1.7rem; } .sub-head__badge b { font-size: .95rem; }
+  .sub-head__sub { font-size: .9rem; }
+}
+@media (min-width: 760px) {
+  .offer-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(10px, 1.6vw, 16px); }
+  .offer-card { padding: 12px 10px 10px; } .offer-card__op { font-size: .95rem; }
+  .offer-card__amt { font-size: clamp(1.5rem, 2.9vw, 2rem); }
+  .offer-card__cta { font-size: .86rem; padding-inline-start: 10px; }
+  .offer-card__go { width: 2.3rem; height: 2.3rem; }
+}
+@media (hover: hover) and (min-width: 760px) {
+  .offer-card { transition: transform var(--t-normal) var(--ease), box-shadow var(--t-normal); }
+  .offer-card:hover { transform: translateY(-3px); box-shadow: 0 22px 28px -16px var(--op-glow), 0 2px 0 rgb(255 255 255 / .95) inset; }
+  .op-quick:hover { transform: translateY(-2px); }
+  .btn-cta:hover { filter: brightness(1.05); }
+}
+
+/* ===== QUICK NAV / COUNTDOWN / FOOTER ===== */
+.quicknav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.qnav { display: flex; align-items: center; gap: 8px; min-height: 3.1rem; padding: 6px 12px; border-radius: var(--r-pill);
+  font-size: .8rem; font-weight: 600; line-height: 1.2; color: #14297d;
+  background: linear-gradient(180deg, rgb(255 255 255 / .96), rgb(238 246 255 / .9)); box-shadow: 0 10px 16px -12px rgb(30 80 190 / .55), inset 0 0 0 1px rgb(255 255 255 / .9), 0 0 0 1px rgb(120 175 235 / .25);
+  transition: transform var(--t-fast) var(--ease); }
+.qnav:active { transform: scale(.97); }
+.qnav__icon { flex: none; font-size: 1.55rem; color: #0a5ee0; }
+
+.countdown { --cd-h: 1; position: sticky; bottom: max(10px, env(safe-area-inset-bottom)); z-index: var(--z-sticky);
+  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; margin-top: var(--section-gap); padding: 10px 12px; border-radius: 22px; color: #fff;
+  background: radial-gradient(22rem 8rem at 0 0, rgb(40 80 190 / .35), transparent 70%), linear-gradient(160deg, #0d1a45, #040a20);
+  box-shadow: 0 0 0 1px rgb(120 170 255 / .28), 0 18px 30px -12px rgb(2 10 50 / .8), inset 0 1px 0 rgb(255 255 255 / .16); }
+.countdown__gift { font-size: 2.3rem; filter: drop-shadow(0 6px 8px rgb(255 120 0 / .45)); }
+.countdown__text h2 { font: 700 .82rem/1.3 var(--font-display); }
+.countdown__text p { display: none; font-size: .82rem; color: #b9c8ee; }
+.countdown__timer { padding: 6px 10px 5px; border-radius: 14px; text-align: center; background: rgb(255 255 255 / .05); box-shadow: inset 0 0 0 1.5px rgb(255 194 26 / .55), 0 0 18px -6px rgb(255 194 26 / .45); }
+.no-js .countdown__timer { display: none; }
+.countdown__label { display: none; align-items: center; justify-content: center; gap: 6px; margin-bottom: 2px; font-size: .72rem; color: #dbe6ff; }
+.countdown__label svg { font-size: 1rem; color: var(--c-gold); }
+.countdown__digits { display: flex; align-items: flex-start; justify-content: center; gap: 3px; font-family: var(--font-display); }
+.countdown__digits div { display: grid; }
+.countdown__digits b { font-size: 1.3rem; line-height: 1.1; font-weight: 800; color: var(--c-gold); text-shadow: 0 0 12px rgb(255 190 20 / .5); font-variant-numeric: tabular-nums; }
+.countdown__digits b.tick { display: inline-block; animation: tick 1s ease-in-out infinite; }
+.countdown__digits i { font-style: normal; font-weight: 800; font-size: 1.2rem; line-height: 1.15; color: var(--c-gold); opacity: .8; }
+.countdown__digits small { font-size: .6rem; color: #b9c8ee; }
+
+.footer { display: grid; gap: 6px; width: min(100%, var(--page-max)); margin-inline: auto; padding: 18px var(--page-pad) 26px; font-size: .78rem; color: #5b6b91; text-align: center; }
+.footer ul { display: flex; flex-wrap: wrap; justify-content: center; gap: 2px 0; }
+.footer ul { column-gap: 1.1rem; }
+@media (min-width: 480px) { .footer ul { column-gap: 0; } .footer li + li::before { content: '|'; margin-inline: .7rem; color: #9fb0d4; } }
+.footer a { color: #2c56b8; text-decoration: underline; text-underline-offset: 3px; }
+.footer a:hover { color: #0a3aa0; }
+.footer a { display: inline-block; padding-block: .4rem; }
+
+@media (min-width: 620px) {
+  .quicknav ul { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+  .qnav { font-size: .88rem; padding-inline: 16px; gap: 10px; min-height: 3.4rem; }
+  .qnav__icon { font-size: 1.7rem; }
+  .countdown { gap: 16px; padding: 14px 20px; border-radius: 26px; }
+  .countdown__gift { font-size: 3.4rem; }
+  .countdown__text h2 { font-size: 1.25rem; } .countdown__text p { display: block; }
+  .countdown__label { display: flex; }
+  .countdown__timer { padding: 8px 18px; border-radius: 16px; }
+  .countdown__digits b { font-size: 1.85rem; } .countdown__digits i { font-size: 1.7rem; }
+  .countdown__digits small { font-size: .68rem; }
+  .footer { display: flex; justify-content: space-between; align-items: center; text-align: start; }
+}
+
+</style>
+
+<style id="ui-enhancements">
+  :root { --ui-shadow: 0 16px 42px rgb(24 67 140 / .14); }
+  html { scroll-behavior: smooth; }
+  body { overflow-x: hidden; }
+  .page { width: min(100%, 1180px); margin-inline: auto; }
+  .hero__inner, .offers, .quicknav, .countdown, .footer { min-width: 0; }
+  .hero__copy, .hero__stage, .offer-card, .sub, .footer { min-width: 0; }
+  .offer-card { transition: transform .22s ease, box-shadow .22s ease, opacity .22s ease; }
+  .offer-card.is-filtered { display: none; }
+  .offer-filter { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 10px 0 22px; padding: 9px; border: 1px solid rgb(55 115 205 / .12); border-radius: 18px; background: rgb(255 255 255 / .78); box-shadow: 0 10px 28px rgb(35 79 160 / .08); }
+  .offer-filter__label { margin-inline: 5px 3px; color: #45608d; font-size: .86rem; font-weight: 700; }
+  .offer-filter button { min-height: 40px; padding: 7px 14px; border: 1px solid rgb(44 105 202 / .16); border-radius: 999px; background: #fff; color: #244477; cursor: pointer; font: inherit; font-size: .9rem; font-weight: 700; transition: .18s ease; }
+  .offer-filter button:hover, .offer-filter button:focus-visible { border-color: #2679df; color: #0b57b7; transform: translateY(-1px); }
+  .offer-filter button[aria-pressed="true"] { border-color: transparent; background: linear-gradient(135deg,#126bd6,#43a9ff); color: #fff; box-shadow: 0 7px 16px rgb(29 113 220 / .24); }
+  .ui-toast { position: fixed; inset-inline: 14px; bottom: max(84px, calc(env(safe-area-inset-bottom) + 18px)); z-index: 20; max-width: 520px; margin-inline: auto; padding: 13px 16px; border: 1px solid rgb(255 255 255 / .25); border-radius: 14px; background: #132e63; color: #fff; box-shadow: var(--ui-shadow); text-align: center; font-weight: 600; opacity: 0; transform: translateY(12px); pointer-events: none; transition: .2s ease; }
+  .ui-toast.is-visible { opacity: 1; transform: translateY(0); }
+  .back-top { position: fixed; right: 14px; bottom: max(84px, calc(env(safe-area-inset-bottom) + 18px)); z-index: 10; width: 44px; height: 44px; border: 0; border-radius: 50%; background: #fff; color: #0a5ee0; box-shadow: 0 8px 24px rgb(20 70 150 / .18); cursor: pointer; opacity: 0; transform: translateY(8px); pointer-events: none; transition: .2s ease; font-size: 1.2rem; }
+  .back-top.is-visible { opacity: 1; transform: none; pointer-events: auto; }
+  .runtime-status { display: none; }
+  @media (max-width: 799px) {
+    .hero__inner { grid-template-columns: 1fr; }
+    .hero__copy { order: 1; }
+    .hero__stage { order: 2; }
+    .hero__title { max-inline-size: 13ch; }
+  }
+  @media (max-width: 560px) {
+    .hero__inner { padding-inline: 14px; }
+    .hero__features { gap: 6px; }
+    .hero__features li { min-width: 0; padding-inline: 4px; font-size: .78rem; }
+    .hero__features li span:last-child { overflow-wrap: anywhere; }
+    .hero__stage { grid-template-columns: 1fr; gap: 12px; }
+    .hero__rail { width: 100%; }
+    .hero__quick { grid-template-columns: repeat(2, minmax(0,1fr)); }
+    .phone-wrap { max-width: min(100%, 24rem); margin-inline: auto; }
+    .sec-head__title { font-size: clamp(1.8rem, 9vw, 2.5rem); }
+    .offer-filter { align-items: stretch; margin-inline: 2px; }
+    .offer-filter__label { flex-basis: 100%; }
+    .offer-filter button { flex: 1 1 calc(50% - 8px); }
+    .countdown { grid-template-columns: 1fr auto; gap: 8px; padding: 9px; }
+    .countdown__gift { display: none; }
+    .countdown__text p { display: none; }
+    .countdown__text h2 { font-size: .9rem; line-height: 1.25; }
+    .countdown__timer { min-width: 112px; }
+    .footer { text-align: center; }
+    .footer nav ul { justify-content: center; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+  }
+</style>
+
+
+<style id="real-logo-bobble-styles">
+  .real-logo { display: block; width: 100%; height: 100%; object-fit: contain; }
+  .logo-bobble { position: relative; display: inline-grid; place-items: center; flex: none; overflow: hidden; border-radius: 42% 58% 52% 48% / 52% 44% 56% 48%; background: #fff; box-shadow: inset 0 1px 0 rgb(255 255 255 / .9), 0 4px 8px rgb(20 70 150 / .18); animation: logo-bob 4.2s ease-in-out infinite; }
+  .logo-bobble::after { content: ''; position: absolute; inset: 8% 12% auto; height: 32%; border-radius: 50%; background: rgb(255 255 255 / .45); pointer-events: none; }
+  .logo-bobble img { position: relative; z-index: 1; width: 76%; height: 76%; object-fit: contain; }
+  .logo-bobble--hero { width: 2.05rem; height: 2.05rem; margin-inline-end: .18rem; background: rgb(255 255 255 / .95); }
+  .logo-bobble--quick { width: 2rem; height: 2rem; }
+  .logo-bobble--filter { width: 1.55rem; height: 1.55rem; margin-inline-end: 3px; }
+  .logo-bobble--card { width: 2rem; height: 2rem; margin-inline-end: .25rem; }
+  .logo-bobble--stack { width: 1.7rem; height: 1.7rem; margin-inline-start: -.45rem; }
+  .logo-stack { display: inline-flex; align-items: center; padding-inline-start: .45rem; }
+  .offer-filter button { display: inline-flex; align-items: center; justify-content: center; gap: 4px; }
+  .offer-card__cta, .btn-cta, .op-quick { display: inline-flex; align-items: center; justify-content: center; }
+  .offer-card__cta { gap: .35rem; }
+  .op-quick { gap: .35rem; }
+  @keyframes logo-bob { 0%, 100% { transform: translateY(0) rotate(-2deg); } 50% { transform: translateY(-3px) rotate(2deg); } }
+  @media (prefers-reduced-motion: reduce) { .logo-bobble { animation: none; } }
+  @media (max-width: 560px) {
+    .logo-bobble--hero { width: 1.75rem; height: 1.75rem; }
+    .logo-bobble--filter { width: 1.35rem; height: 1.35rem; }
+    .logo-bobble--card { width: 1.75rem; height: 1.75rem; }
+  }
+</style>
+
+
+<style id="real-logo-bobble-fixes">
+  /* Keep real assets inside the dimensions of the original button slots. */
+  .op-quick__logo { display: grid; place-items: center; overflow: visible; }
+  .op-quick__logo .logo-bobble { width: 100%; height: 100%; margin: 0; }
+  .offer-card__cta .offer-card__thumb { display: none; }
+  .offer-card__cta .logo-bobble--card { width: 1.8rem; height: 1.8rem; margin-inline-end: .05rem; }
+  .btn-cta .logo-stack { gap: .02rem; padding-inline-start: .1rem; }
+  .btn-cta .logo-bobble--hero { width: 1.55rem; height: 1.55rem; margin-inline-start: -.18rem; }
+  .btn-cta .logo-bobble--hero:first-child { margin-inline-start: 0; }
+  .pill-btn .logo-stack { gap: 0; padding-inline-start: .18rem; }
+  .pill-btn .logo-bobble--stack { width: 1.28rem; height: 1.28rem; margin-inline-start: -.38rem; }
+  .pill-btn .logo-bobble--stack:first-child { margin-inline-start: 0; }
+  .offer-filter .logo-stack { gap: 0; padding-inline-start: .25rem; }
+  .offer-filter .logo-bobble--filter { width: 1.22rem; height: 1.22rem; margin-inline-start: -.36rem; }
+  .offer-filter .logo-bobble--filter:first-child { margin-inline-start: 0; }
+  @media (max-width: 560px) {
+    .op-quick__logo { width: 1.65rem; height: 1.65rem; }
+    .offer-card__cta .logo-bobble--card { width: 1.55rem; height: 1.55rem; }
+    .btn-cta .logo-bobble--hero { width: 1.3rem; height: 1.3rem; }
+  }
+</style>
+
+
+<style id="offer-card-logo-minimal-fix">
+  .offer-card__logo { margin-top: -.15rem; }
+</style>
+
+
+<style id="site-feature-updates">
+  .logo-bobble--card { width: 65px; height: 65px; }
+  .offer-card__op { margin-top: .62rem; font-size: 1rem; }
+  .offer-filter { width: fit-content; max-width: 100%; margin-inline: auto; justify-content: center; }
+  .contact-panel { margin-top: var(--section-gap); padding: clamp(1rem, 3vw, 1.6rem); border: 1px solid rgb(77 129 210 / .16); border-radius: 24px; background: linear-gradient(145deg, rgb(255 255 255 / .96), rgb(239 247 255 / .92)); box-shadow: 0 16px 34px -22px rgb(20 70 150 / .38); }
+  .contact-panel__head { display: grid; gap: .25rem; margin-bottom: 1rem; }
+  .contact-panel__title { color: var(--c-ink); font: 800 clamp(1.35rem, 4vw, 1.9rem)/1.1 var(--font-display); }
+  .contact-panel__sub { color: var(--c-muted); font-size: .92rem; }
+  .contact-form { display: grid; gap: .8rem; }
+  .contact-form__grid { display: grid; gap: .8rem; }
+  .contact-form label { display: grid; gap: .3rem; color: var(--c-ink-2); font-weight: 700; font-size: .88rem; }
+  .contact-form input, .contact-form select, .contact-form textarea { width: 100%; min-height: 2.75rem; padding: .65rem .8rem; border: 1px solid rgb(49 108 195 / .2); border-radius: 12px; background: #fff; color: var(--c-ink); font: inherit; }
+  .contact-form textarea { min-height: 7rem; resize: vertical; }
+  .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus { border-color: #2679df; outline: 3px solid rgb(38 121 223 / .15); }
+  .contact-form__note { color: var(--c-muted); font-size: .78rem; }
+  .contact-form__success { display: none; padding: .75rem .9rem; border-radius: 12px; background: rgb(18 161 80 / .1); color: #08763b; font-weight: 700; }
+  .contact-form__success.is-visible { display: block; }
+  .button-wave { position: relative; overflow: hidden; isolation: isolate; }
+  .button-wave::after { content: ''; position: absolute; z-index: 0; top: -30%; bottom: -30%; left: -45%; width: 24%; transform: skewX(-18deg); background: linear-gradient(90deg, transparent, rgb(255 255 255 / .58), transparent); opacity: 0; pointer-events: none; animation: button-wave-sweep 5.8s ease-in-out infinite; }
+  .button-wave > * { position: relative; z-index: 1; }
+  @keyframes button-wave-sweep { 0%, 62% { left: -45%; opacity: 0; } 68% { opacity: .9; } 78%, 100% { left: 135%; opacity: 0; } }
+  @media (min-width: 620px) { .contact-form__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .contact-form__grid label:last-child { grid-column: 1 / -1; } }
+  @media (prefers-reduced-motion: reduce) { .button-wave::after { animation: none; } }
+</style>
+
+
+<style id="contact-ui-polish">
+  .contact-panel { width: min(100%, 760px); margin-inline: auto; }
+  .contact-panel__head { text-align: center; justify-items: center; }
+  .contact-form { max-width: 680px; margin-inline: auto; }
+  .contact-form__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+  .contact-form__grid label:last-child { grid-column: 1 / -1; }
+  .contact-form label { text-align: start; }
+  .contact-form input, .contact-form select, .contact-form textarea { min-height: 3rem; border-color: rgb(42 108 201 / .22); box-shadow: 0 2px 0 rgb(255 255 255 / .9) inset; }
+  .contact-form textarea { min-height: 8rem; }
+  .contact-form__submit { width: min(100%, 18rem); margin-inline: auto; }
+  .contact-form__success { text-align: center; }
+  .coming-tooltip { position: fixed; left: 50%; bottom: max(86px, calc(env(safe-area-inset-bottom) + 20px)); z-index: 60; width: max-content; max-width: min(92vw, 360px); padding: .75rem 1rem; border: 1px solid rgb(255 255 255 / .28); border-radius: 14px; background: #132e63; color: #fff; box-shadow: 0 16px 34px rgb(10 35 90 / .28); text-align: center; font-weight: 700; opacity: 0; transform: translate(-50%, 12px); pointer-events: none; transition: opacity .2s ease, transform .2s ease; }
+  .coming-tooltip.is-visible { opacity: 1; transform: translate(-50%, 0); }
+  .coming-tooltip::after { content: ''; position: absolute; left: 50%; bottom: -7px; width: 13px; height: 13px; background: #132e63; transform: translateX(-50%) rotate(45deg); }
+  @media (max-width: 619px) { .contact-form__grid { grid-template-columns: 1fr; } .contact-form__grid label:last-child { grid-column: auto; } }
+</style>
+
+</head>
+<body>
+
+<a class="skip" href="#offers">মূল কনটেন্টে যান</a>
+<div class="page">
+  <main>
+    
+<section class="hero" aria-labelledby="hero-title">
+  <div class="hero__bg" aria-hidden="true">
+    <div class="hero__clouds"></div>
+    <div class="hero__trees hero__trees--l"></div><div class="hero__trees hero__trees--r"></div>
+    <svg class="hero__monument" viewBox="0 0 300 200" preserveAspectRatio="xMidYMax meet">
+      <path d="M150 6c10 40 30 110 46 158H104C120 116 140 46 150 6z" fill="#dcecf9"/>
+      <path d="M150 6c-3 60-14 118-46 158h20c14-40 22-96 26-158z" fill="#c4dcf1" opacity=".7"/>
+      <path d="M96 164c10-40 26-84 36-118-2 44-16 96-30 118zM204 164c-10-40-26-84-36-118 2 44 16 96 30 118z" fill="#d3e6f6" opacity=".9"/>
+      <rect x="60" y="164" width="180" height="14" rx="4" fill="#cfe3f4"/>
+    </svg>
+    <div class="hero__veil"></div><div class="hero__water"></div>
+  </div>
+
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <div class="hero__top">
+        <p class="hero__kicker">একটি অফার — বেশি সুবিধা</p>
+        
+<div class="urgency">
+  <svg class="urgency__clock" viewBox="0 0 64 64" aria-hidden="true">
+    <g stroke="#ffc21a" stroke-width="4.5" stroke-linecap="round"><path d="M6 24l9 3"/><path d="M9 11l9 8"/><path d="M22 3l4 10"/></g>
+    <circle cx="38" cy="38" r="22" fill="#fff" stroke="#e5141f" stroke-width="5"/>
+    <path d="M38 24v15l9 5" fill="none" stroke="#e5141f" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="38" cy="38" r="3.2" fill="#e5141f"/>
+  </svg>
+  <p class="urgency__text"><b>সীমিত</b><span>সময়ের জন্য!</span></p>
+</div>
+      </div>
+      <h1 id="hero-title" class="hero__title"><span class="d3 d3--white" data-text="ইন্টারনেট ও">ইন্টারনেট ও</span><span class="d3 d3--gold" data-text="মিনিট অফার">মিনিট অফার</span></h1>
+      <p class="hero__lead">আপনার প্রিয় অপারেটরের অফার থেকে আপনার পছন্দেরটি নির্বাচন করুন</p>
+      <ul class="hero__features">
+        <li><span class="hero__ficon hero__ficon--bolt"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M13.6 1.8 4.6 13.6h6.1l-1.4 8.6 9.6-12.6h-6.2z"/></svg></span><span>দ্রুত রিচার্জ</span></li><li><span class="hero__ficon hero__ficon--shield"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M12 1.9 4.2 5v6.2c0 4.8 3.2 8.7 7.8 10.9 4.6-2.2 7.8-6.1 7.8-10.9V5z"/><path d="m8.4 12 2.5 2.5 4.7-5.1" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span>নিরাপদ সার্ভিস</span></li><li><span class="hero__ficon hero__ficon--users"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="9" cy="7.6" r="3.6"/><path d="M2 20.2c0-3.9 3-6.4 7-6.4s7 2.5 7 6.4z"/><circle cx="17.4" cy="8.6" r="2.8" opacity=".7"/><path d="M16.6 13.4c3.2.1 5.4 2.1 5.4 5.6h-4.3c0-2.1-.3-3.8-1.1-5.6z" opacity=".7"/></svg></span><span>সব অপারেটর এক জায়গায়</span></li>
+      </ul>
+      <a class="button-wave btn-cta" href="#offers"><span>এখনই অফার দেখুন</span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></a>
+      <ul class="hero__trust"><li><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="11" fill="#12a150"/><path d="m6.8 12.4 3.4 3.4 7-7.4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>সহজ নির্বাচন</span></li><li><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="11" fill="#12a150"/><path d="m6.8 12.4 3.4 3.4 7-7.4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>দ্রুত অ্যাক্টিভেশন</span></li><li><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="11" fill="#12a150"/><path d="m6.8 12.4 3.4 3.4 7-7.4" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>বিশ্বস্ত ও নির্ভরযোগ্য</span></li></ul>
+    </div>
+
+    <div class="hero__stage">
+      
+<div class="phone-wrap" aria-hidden="true">
+  <div class="phone">
+    <i class="phone__btn phone__btn--l1"></i><i class="phone__btn phone__btn--l2"></i><i class="phone__btn phone__btn--r"></i>
+    <div class="phone__screen">
+      <div class="phone__status"><span>9:41</span><i class="phone__island"></i><span class="phone__sig"><svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M3.6 12.400a17.500 17.500 0 0 1 24.800 0M8.200 17.200a11 11 0 0 1 15.600 0M12.600 21.800a4.700 4.700 0 0 1 6.800 0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><circle cx="16" cy="26" r="2.300"/></svg></span></div>
+      <div class="phone__head"><strong>ইন্টারনেট ও মিনিট অফার</strong><small>আপনার প্রিয় অপারেটরের অফার এক ক্লিকে</small></div>
+      <div class="phone__tabs"><b>DATA</b><span>VOICE</span></div>
+      <div class="phone__grid">
+        
+        <div class="phone__tile" style="--op-main:#ff6a00;--op-end:#ffa21f;--op-rgb:255 106 0;--op-tint:#ffefe0;--op-tint-2:#fffaf4;--op-ink:#7a3200;--op-amt-a:#f25200;--op-amt-b:#ff9414;--op-glow:rgb(255 122 30 / .42)">
+          <span class="phone__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M32 56C9 40 5 25 13 15c7-8 16-4 19 4 3-8 12-12 19-4 8 10 4 25-19 41z" fill="#ff6a00"/><path d="M22 24c7-2 12 2 10 8-1.500 4.500-6 5.500-9 3 6 1 11-1 12-6" fill="none" stroke="#fff" stroke-width="4.500" stroke-linecap="round"/></svg></span>
+          <strong>বাংলালিংক</strong><em>অফার দেখুন</em>
+        </div>
+        <div class="phone__tile" style="--op-main:#0a84ff;--op-end:#4fb7ff;--op-rgb:10 132 255;--op-tint:#e2f3ff;--op-tint-2:#f7fbff;--op-ink:#0a3a85;--op-amt-a:#0a52d6;--op-amt-b:#1e98ff;--op-glow:rgb(20 140 255 / .42)">
+          <span class="phone__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M8 36C14 18 30 10 54 14c-8 3-13 9-14 17 6-5 12-6 18-4C52 42 40 52 26 52 14 52 6 46 8 36z" fill="#0a9be0"/><path d="M22 32c8-8 18-8 28-4" fill="none" stroke="#fff" stroke-width="3.600" stroke-linecap="round" opacity=".9"/></svg></span>
+          <strong>গ্রামীণফোন</strong><em>অফার দেখুন</em>
+        </div>
+        <div class="phone__tile" style="--op-main:#e3132f;--op-end:#ff4d66;--op-rgb:227 19 47;--op-tint:#ffe4ea;--op-tint-2:#fff7f9;--op-ink:#84091f;--op-amt-a:#d20e2b;--op-amt-b:#f2334f;--op-glow:rgb(240 40 70 / .38)">
+          <span class="phone__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" fill="#e3132f"/><text x="30" y="41" font-family="var(--font-display)" font-weight="800" text-anchor="middle" font-size="26" fill="#fff">রবি</text><path d="M44 12l10 4-4 10z" fill="#ffd33d"/></svg></span>
+          <strong>রবি</strong><em>অফার দেখুন</em>
+        </div>
+        <div class="phone__tile" style="--op-main:#ee1f7c;--op-end:#ff5aa3;--op-rgb:238 31 124;--op-tint:#ffe5f2;--op-tint-2:#fff7fb;--op-ink:#80104a;--op-amt-a:#e0112f;--op-amt-b:#c4197f;--op-glow:rgb(238 40 130 / .38)">
+          <span class="phone__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><text x="32" y="43" font-family="var(--font-display)" font-weight="800" text-anchor="middle" font-size="21" letter-spacing="-.5" fill="#e4002b" style="font-family:var(--font-body);font-weight:700">airtel</text><path d="M26 22c4-9 15-8 16-1-3-3-9-4-16 1z" fill="#e4002b"/></svg></span>
+          <strong>এয়ারটেল</strong><em>অফার দেখুন</em>
+        </div>
+      </div>
+      <div class="phone__nav">
+        <span class="is-on"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M12 2.800 2.400 11h2.500v9.200h5v-6h4.200v6h5V11h2.500z"/></svg><small>হোম</small></span><span class=""><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M3.200 4.600h9l8.800 8.800-7.600 7.600-8.800-8.800z" opacity=".9"/><circle cx="7.600" cy="8.800" r="1.500" fill="#fff"/></svg><small>অফার</small></span><span class=""><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4 6.200h13.800v3.400H20a1.500 1.500 0 0 1 1.500 1.500v7.300A1.500 1.500 0 0 1 20 20H5a2.500 2.500 0 0 1-2.500-2.500V7.700A1.500 1.500 0 0 1 4 6.200z" opacity=".9"/><path d="M4.500 3.800 16 2.600v3H4.500z"/></svg><small>রিচার্জ</small></span><span class=""><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="9.800" opacity=".9"/><path d="M12 10.800v6" stroke="#fff" stroke-width="2.400" stroke-linecap="round"/><circle cx="12" cy="7.400" r="1.400" fill="#fff"/></svg><small>সহায়তা</small></span>
+      </div>
+    </div>
+  </div>
+  <div class="phone-wrap__reflection"></div>
+</div>
+      <div class="hero__rail">
+        <p class="hero__rail-title">সবচেয়ে ভালো অফার এখন এক জায়গায়!</p>
+        <nav class="hero__quick" aria-label="অপারেটর দ্রুত লিংক">
+<a class="op-quick op-quick--light" href="#gp-data" style="--q-from:#2d9cff;--q-to:#0a5ee0;--q-text:#ffffff">
+  <span class="op-quick__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M8 36C14 18 30 10 54 14c-8 3-13 9-14 17 6-5 12-6 18-4C52 42 40 52 26 52 14 52 6 46 8 36z" fill="#fff"/></svg></span>
+  <span class="op-quick__name">গ্রামীণফোন</span>
+</a>
+<a class="op-quick op-quick--dark" href="#banglalink-data" style="--q-from:#ffa12a;--q-to:#f2580a;--q-text:#ffffff">
+  <span class="op-quick__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M32 56C9 40 5 25 13 15c7-8 16-4 19 4 3-8 12-12 19-4 8 10 4 25-19 41z" fill="#3d1a00"/></svg></span>
+  <span class="op-quick__name">বাংলালিংক</span>
+</a>
+<a class="op-quick op-quick--light" href="#robi-data" style="--q-from:#ff3b55;--q-to:#c80a24;--q-text:#ffffff">
+  <span class="op-quick__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="34" r="20" fill="none" stroke="#fff" stroke-width="7"/><path d="M40 6l14 5-5 14z" fill="#ffd33d"/></svg></span>
+  <span class="op-quick__name">রবি</span>
+</a>
+<a class="op-quick op-quick--color" href="#airtel-data" style="--q-from:#ffffff;--q-to:#f3f6fb;--q-text:#c5102c">
+  <span class="op-quick__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><text x="32" y="43" font-family="var(--font-display)" font-weight="800" text-anchor="middle" font-size="21" letter-spacing="-.5" fill="#e4002b" style="font-family:var(--font-body);font-weight:700">airtel</text><path d="M26 22c4-9 15-8 16-1-3-3-9-4-16 1z" fill="#e4002b"/></svg></span>
+  <span class="op-quick__name">এয়ারটেল</span>
+</a></nav>
+      </div>
+      <p class="hero__pledge"><span class="hero__pledge-ic"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="m5 12.6 4.4 4.4L19 7.4" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/></svg></span><span>আপনার সংযোগ,<br>আমাদের অঙ্গীকার</span></p>
+    </div>
+  </div>
+</section>
+    
+<section class="offers" id="offers" aria-labelledby="offers-title">
+  
+<header class="sec-head" data-reveal>
+  <span class="sec-head__badge">আপনার জন্য সেরা অফার</span>
+  <h2 id="offers-title" class="sec-head__title"><span class="w-blue">ইন্টারনেট</span> <span class="w-ink">ও</span> <span class="w-orange">মিনিট</span> <span class="w-ink">অফার</span></h2>
+  <p class="sec-head__sub">আপনার প্রয়োজন অনুযায়ী পছন্দের অফারটি বেছে নিন</p>
+</header>
+  
+  <div class="sub sub--data" role="group" aria-labelledby="data-title">
+    
+<div class="sub-head">
+  <span class="sub-head__icon"><svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M16 13.2 11 28h10z" fill="currentColor"/><circle cx="16" cy="10.6" r="2.4" fill="currentColor"/><path d="M10.7 5.7a7.6 7.6 0 0 0 0 9.8M21.3 5.7a7.6 7.6 0 0 1 0 9.8M7.3 2.8a12.2 12.2 0 0 0 0 15.6M24.7 2.8a12.2 12.2 0 0 1 0 15.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.9"/></svg></span>
+  <div class="sub-head__text">
+    <h3 class="sub-head__title" id="data-title">বিশেষ <span class="accent">ইন্টারনেট</span> অফার</h3>
+    <p class="sub-head__sub">২৫ জিবি ফ্রি ইন্টারনেট অফার</p>
+    <a class="button-wave pill-btn" href="#data-cards"><span>এখনই দেখুন</span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></a>
+  </div>
+  <p class="sub-head__script" aria-hidden="true"><em>Stay Connected</em><span>Faster • Smarter • Together</span></p>
+  <span class="sub-head__badge" aria-hidden="true"><svg viewBox="0 0 32 32" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M3.6 12.400a17.500 17.500 0 0 1 24.800 0M8.200 17.200a11 11 0 0 1 15.600 0M12.600 21.800a4.700 4.700 0 0 1 6.800 0" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"/><circle cx="16" cy="26" r="2.300"/></svg><b>DATA</b></span>
+</div>
+    <div class="offer-grid" id="data-cards">
+      
+<article class="offer-card" id="banglalink-data" style="--op-main:#ff6a00;--op-end:#ffa21f;--op-rgb:255 106 0;--op-tint:#ffefe0;--op-tint-2:#fffaf4;--op-ink:#7a3200;--op-amt-a:#f25200;--op-amt-b:#ff9414;--op-glow:rgb(255 122 30 / .42);--i:0" data-reveal>
+  <span class="offer-card__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M32 56C9 40 5 25 13 15c7-8 16-4 19 4 3-8 12-12 19-4 8 10 4 25-19 41z" fill="#ff6a00"/><path d="M22 24c7-2 12 2 10 8-1.500 4.500-6 5.500-9 3 6 1 11-1 12-6" fill="none" stroke="#fff" stroke-width="4.500" stroke-linecap="round"/></svg></span>
+  <h4 class="offer-card__op">বাংলালিংক</h4>
+  <p class="offer-card__amt"><span>২৫ জিবি</span> <small>ফ্রি</small></p>
+  <p class="offer-card__label">ইন্টারনেট</p>
+  <a class="button-wave offer-card__cta" href="#offers">
+    <span class="offer-card__thumb"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M2.6 10.6h3.9V21H3.6a1 1 0 0 1-1-1z" fill="#f0a500"/><path d="M8 10.8 11.4 3.4a1.9 1.9 0 0 1 3.5 1.3l-.9 4.4h5a2.1 2.1 0 0 1 2.1 2.6l-1.5 7.2a2.1 2.1 0 0 1-2.1 1.7H8z" fill="#ffc928" stroke="#e39b00" stroke-width="1" stroke-linejoin="round"/><path d="M10.6 12.2h6.2" stroke="#fff3b0" stroke-width="1.2" stroke-linecap="round" opacity=".8"/></svg></span>
+    <span class="button-wave offer-card__cta-text">বিস্তারিত দেখুন<span class="sr-only"> — বাংলালিংক ২৫ জিবি ফ্রি ইন্টারনেট</span></span>
+    <span class="offer-card__go"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></span>
+  </a>
+</article>
+<article class="offer-card" id="gp-data" style="--op-main:#0a84ff;--op-end:#4fb7ff;--op-rgb:10 132 255;--op-tint:#e2f3ff;--op-tint-2:#f7fbff;--op-ink:#0a3a85;--op-amt-a:#0a52d6;--op-amt-b:#1e98ff;--op-glow:rgb(20 140 255 / .42);--i:1" data-reveal>
+  <span class="offer-card__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M8 36C14 18 30 10 54 14c-8 3-13 9-14 17 6-5 12-6 18-4C52 42 40 52 26 52 14 52 6 46 8 36z" fill="#0a9be0"/><path d="M22 32c8-8 18-8 28-4" fill="none" stroke="#fff" stroke-width="3.600" stroke-linecap="round" opacity=".9"/></svg></span>
+  <h4 class="offer-card__op">গ্রামীণফোন</h4>
+  <p class="offer-card__amt"><span>২৫ জিবি</span> <small>ফ্রি</small></p>
+  <p class="offer-card__label">ইন্টারনেট</p>
+  <a class="button-wave offer-card__cta" href="#offers">
+    <span class="offer-card__thumb"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M2.6 10.6h3.9V21H3.6a1 1 0 0 1-1-1z" fill="#f0a500"/><path d="M8 10.8 11.4 3.4a1.9 1.9 0 0 1 3.5 1.3l-.9 4.4h5a2.1 2.1 0 0 1 2.1 2.6l-1.5 7.2a2.1 2.1 0 0 1-2.1 1.7H8z" fill="#ffc928" stroke="#e39b00" stroke-width="1" stroke-linejoin="round"/><path d="M10.6 12.2h6.2" stroke="#fff3b0" stroke-width="1.2" stroke-linecap="round" opacity=".8"/></svg></span>
+    <span class="button-wave offer-card__cta-text">বিস্তারিত দেখুন<span class="sr-only"> — গ্রামীণফোন ২৫ জিবি ফ্রি ইন্টারনেট</span></span>
+    <span class="offer-card__go"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></span>
+  </a>
+</article>
+<article class="offer-card" id="robi-data" style="--op-main:#e3132f;--op-end:#ff4d66;--op-rgb:227 19 47;--op-tint:#ffe4ea;--op-tint-2:#fff7f9;--op-ink:#84091f;--op-amt-a:#d20e2b;--op-amt-b:#f2334f;--op-glow:rgb(240 40 70 / .38);--i:2" data-reveal>
+  <span class="offer-card__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" fill="#e3132f"/><text x="30" y="41" font-family="var(--font-display)" font-weight="800" text-anchor="middle" font-size="26" fill="#fff">রবি</text><path d="M44 12l10 4-4 10z" fill="#ffd33d"/></svg></span>
+  <h4 class="offer-card__op">রবি</h4>
+  <p class="offer-card__amt"><span>২৫ জিবি</span> <small>ফ্রি</small></p>
+  <p class="offer-card__label">ইন্টারনেট</p>
+  <a class="button-wave offer-card__cta" href="#offers">
+    <span class="offer-card__thumb"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M2.6 10.6h3.9V21H3.6a1 1 0 0 1-1-1z" fill="#f0a500"/><path d="M8 10.8 11.4 3.4a1.9 1.9 0 0 1 3.5 1.3l-.9 4.4h5a2.1 2.1 0 0 1 2.1 2.6l-1.5 7.2a2.1 2.1 0 0 1-2.1 1.7H8z" fill="#ffc928" stroke="#e39b00" stroke-width="1" stroke-linejoin="round"/><path d="M10.6 12.2h6.2" stroke="#fff3b0" stroke-width="1.2" stroke-linecap="round" opacity=".8"/></svg></span>
+    <span class="button-wave offer-card__cta-text">বিস্তারিত দেখুন<span class="sr-only"> — রবি ২৫ জিবি ফ্রি ইন্টারনেট</span></span>
+    <span class="offer-card__go"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></span>
+  </a>
+</article>
+<article class="offer-card" id="airtel-data" style="--op-main:#ee1f7c;--op-end:#ff5aa3;--op-rgb:238 31 124;--op-tint:#ffe5f2;--op-tint-2:#fff7fb;--op-ink:#80104a;--op-amt-a:#e0112f;--op-amt-b:#c4197f;--op-glow:rgb(238 40 130 / .38);--i:3" data-reveal>
+  <span class="offer-card__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><text x="32" y="43" font-family="var(--font-display)" font-weight="800" text-anchor="middle" font-size="21" letter-spacing="-.5" fill="#e4002b" style="font-family:var(--font-body);font-weight:700">airtel</text><path d="M26 22c4-9 15-8 16-1-3-3-9-4-16 1z" fill="#e4002b"/></svg></span>
+  <h4 class="offer-card__op">এয়ারটেল</h4>
+  <p class="offer-card__amt"><span>২৫ জিবি</span> <small>ফ্রি</small></p>
+  <p class="offer-card__label">ইন্টারনেট</p>
+  <a class="button-wave offer-card__cta" href="#offers">
+    <span class="offer-card__thumb"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M2.6 10.6h3.9V21H3.6a1 1 0 0 1-1-1z" fill="#f0a500"/><path d="M8 10.8 11.4 3.4a1.9 1.9 0 0 1 3.5 1.3l-.9 4.4h5a2.1 2.1 0 0 1 2.1 2.6l-1.5 7.2a2.1 2.1 0 0 1-2.1 1.7H8z" fill="#ffc928" stroke="#e39b00" stroke-width="1" stroke-linejoin="round"/><path d="M10.6 12.2h6.2" stroke="#fff3b0" stroke-width="1.2" stroke-linecap="round" opacity=".8"/></svg></span>
+    <span class="button-wave offer-card__cta-text">বিস্তারিত দেখুন<span class="sr-only"> — এয়ারটেল ২৫ জিবি ফ্রি ইন্টারনেট</span></span>
+    <span class="offer-card__go"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></span>
+  </a>
+</article>
+    </div>
+  </div>
+  <div class="sub sub--voice" role="group" aria-labelledby="voice-title">
+    
+<div class="sub-head">
+  <span class="sub-head__icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M6.9 2.6 9.5 3c.6.1 1 .6 1.1 1.2l.5 3a1.5 1.5 0 0 1-.7 1.5l-1.700 1.100a12.500 12.500 0 0 0 5.400 5.400l1.100-1.700a1.500 1.500 0 0 1 1.500-.7l3 .5c.6.1 1.100.5 1.200 1.100l.4 2.600c.1 1-.6 1.900-1.600 2A17.500 17.500 0 0 1 3.800 4.500c.1-1 1-1.800 2-1.700z"/></svg></span>
+  <div class="sub-head__text">
+    <h3 class="sub-head__title" id="voice-title">সকল <span class="accent">মিনিট</span> অফার</h3>
+    <p class="sub-head__sub">আপনার পছন্দের অপারেটর থেকে নিন</p>
+    <a class="button-wave pill-btn" href="#voice-cards"><span>এখনই দেখুন</span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></a>
+  </div>
+  <p class="sub-head__script" aria-hidden="true"><em>Keep in Touch</em><span>Clearer • Closer • Always</span></p>
+  <span class="sub-head__badge" aria-hidden="true"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M6.9 2.6 9.5 3c.6.1 1 .6 1.1 1.2l.5 3a1.5 1.5 0 0 1-.7 1.5l-1.700 1.100a12.500 12.500 0 0 0 5.400 5.400l1.100-1.700a1.500 1.500 0 0 1 1.500-.7l3 .5c.6.1 1.100.5 1.200 1.100l.4 2.600c.1 1-.6 1.900-1.600 2A17.500 17.500 0 0 1 3.800 4.500c.1-1 1-1.800 2-1.700z"/></svg><b>VOICE</b></span>
+</div>
+    <div class="offer-grid" id="voice-cards">
+      
+<article class="offer-card" id="banglalink-voice" style="--op-main:#ff6a00;--op-end:#ffa21f;--op-rgb:255 106 0;--op-tint:#ffefe0;--op-tint-2:#fffaf4;--op-ink:#7a3200;--op-amt-a:#f25200;--op-amt-b:#ff9414;--op-glow:rgb(255 122 30 / .42);--i:0" data-reveal>
+  <span class="offer-card__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M32 56C9 40 5 25 13 15c7-8 16-4 19 4 3-8 12-12 19-4 8 10 4 25-19 41z" fill="#ff6a00"/><path d="M22 24c7-2 12 2 10 8-1.500 4.500-6 5.500-9 3 6 1 11-1 12-6" fill="none" stroke="#fff" stroke-width="4.500" stroke-linecap="round"/></svg></span>
+  <h4 class="offer-card__op">বাংলালিংক</h4>
+  <p class="offer-card__amt"><span>১০০ মিনিট</span> <small>ফ্রি</small></p>
+  <p class="offer-card__label" aria-hidden="true">&nbsp;</p>
+  <a class="button-wave offer-card__cta" href="#offers">
+    <span class="offer-card__thumb"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M2.6 10.6h3.9V21H3.6a1 1 0 0 1-1-1z" fill="#f0a500"/><path d="M8 10.8 11.4 3.4a1.9 1.9 0 0 1 3.5 1.3l-.9 4.4h5a2.1 2.1 0 0 1 2.1 2.6l-1.5 7.2a2.1 2.1 0 0 1-2.1 1.7H8z" fill="#ffc928" stroke="#e39b00" stroke-width="1" stroke-linejoin="round"/><path d="M10.6 12.2h6.2" stroke="#fff3b0" stroke-width="1.2" stroke-linecap="round" opacity=".8"/></svg></span>
+    <span class="button-wave offer-card__cta-text">বিস্তারিত দেখুন<span class="sr-only"> — বাংলালিংক ১০০ মিনিট ফ্রি </span></span>
+    <span class="offer-card__go"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></span>
+  </a>
+</article>
+<article class="offer-card" id="gp-voice" style="--op-main:#0a84ff;--op-end:#4fb7ff;--op-rgb:10 132 255;--op-tint:#e2f3ff;--op-tint-2:#f7fbff;--op-ink:#0a3a85;--op-amt-a:#0a52d6;--op-amt-b:#1e98ff;--op-glow:rgb(20 140 255 / .42);--i:1" data-reveal>
+  <span class="offer-card__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><path d="M8 36C14 18 30 10 54 14c-8 3-13 9-14 17 6-5 12-6 18-4C52 42 40 52 26 52 14 52 6 46 8 36z" fill="#0a9be0"/><path d="M22 32c8-8 18-8 28-4" fill="none" stroke="#fff" stroke-width="3.600" stroke-linecap="round" opacity=".9"/></svg></span>
+  <h4 class="offer-card__op">গ্রামীণফোন</h4>
+  <p class="offer-card__amt"><span>১০০ মিনিট</span> <small>ফ্রি</small></p>
+  <p class="offer-card__label" aria-hidden="true">&nbsp;</p>
+  <a class="button-wave offer-card__cta" href="#offers">
+    <span class="offer-card__thumb"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M2.6 10.6h3.9V21H3.6a1 1 0 0 1-1-1z" fill="#f0a500"/><path d="M8 10.8 11.4 3.4a1.9 1.9 0 0 1 3.5 1.3l-.9 4.4h5a2.1 2.1 0 0 1 2.1 2.6l-1.5 7.2a2.1 2.1 0 0 1-2.1 1.7H8z" fill="#ffc928" stroke="#e39b00" stroke-width="1" stroke-linejoin="round"/><path d="M10.6 12.2h6.2" stroke="#fff3b0" stroke-width="1.2" stroke-linecap="round" opacity=".8"/></svg></span>
+    <span class="button-wave offer-card__cta-text">বিস্তারিত দেখুন<span class="sr-only"> — গ্রামীণফোন ১০০ মিনিট ফ্রি </span></span>
+    <span class="offer-card__go"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></span>
+  </a>
+</article>
+<article class="offer-card" id="robi-voice" style="--op-main:#e3132f;--op-end:#ff4d66;--op-rgb:227 19 47;--op-tint:#ffe4ea;--op-tint-2:#fff7f9;--op-ink:#84091f;--op-amt-a:#d20e2b;--op-amt-b:#f2334f;--op-glow:rgb(240 40 70 / .38);--i:2" data-reveal>
+  <span class="offer-card__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><circle cx="32" cy="32" r="30" fill="#e3132f"/><text x="30" y="41" font-family="var(--font-display)" font-weight="800" text-anchor="middle" font-size="26" fill="#fff">রবি</text><path d="M44 12l10 4-4 10z" fill="#ffd33d"/></svg></span>
+  <h4 class="offer-card__op">রবি</h4>
+  <p class="offer-card__amt"><span>১০০ মিনিট</span> <small>ফ্রি</small></p>
+  <p class="offer-card__label" aria-hidden="true">&nbsp;</p>
+  <a class="button-wave offer-card__cta" href="#offers">
+    <span class="offer-card__thumb"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M2.6 10.6h3.9V21H3.6a1 1 0 0 1-1-1z" fill="#f0a500"/><path d="M8 10.8 11.4 3.4a1.9 1.9 0 0 1 3.5 1.3l-.9 4.4h5a2.1 2.1 0 0 1 2.1 2.6l-1.5 7.2a2.1 2.1 0 0 1-2.1 1.7H8z" fill="#ffc928" stroke="#e39b00" stroke-width="1" stroke-linejoin="round"/><path d="M10.6 12.2h6.2" stroke="#fff3b0" stroke-width="1.2" stroke-linecap="round" opacity=".8"/></svg></span>
+    <span class="button-wave offer-card__cta-text">বিস্তারিত দেখুন<span class="sr-only"> — রবি ১০০ মিনিট ফ্রি </span></span>
+    <span class="offer-card__go"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></span>
+  </a>
+</article>
+<article class="offer-card" id="airtel-voice" style="--op-main:#ee1f7c;--op-end:#ff5aa3;--op-rgb:238 31 124;--op-tint:#ffe5f2;--op-tint-2:#fff7fb;--op-ink:#80104a;--op-amt-a:#e0112f;--op-amt-b:#c4197f;--op-glow:rgb(238 40 130 / .38);--i:3" data-reveal>
+  <span class="offer-card__logo"><svg viewBox="0 0 64 64" aria-hidden="true" focusable="false"><text x="32" y="43" font-family="var(--font-display)" font-weight="800" text-anchor="middle" font-size="21" letter-spacing="-.5" fill="#e4002b" style="font-family:var(--font-body);font-weight:700">airtel</text><path d="M26 22c4-9 15-8 16-1-3-3-9-4-16 1z" fill="#e4002b"/></svg></span>
+  <h4 class="offer-card__op">এয়ারটেল</h4>
+  <p class="offer-card__amt"><span>১০০ মিনিট</span> <small>ফ্রি</small></p>
+  <p class="offer-card__label" aria-hidden="true">&nbsp;</p>
+  <a class="button-wave offer-card__cta" href="#offers">
+    <span class="offer-card__thumb"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M2.6 10.6h3.9V21H3.6a1 1 0 0 1-1-1z" fill="#f0a500"/><path d="M8 10.8 11.4 3.4a1.9 1.9 0 0 1 3.5 1.3l-.9 4.4h5a2.1 2.1 0 0 1 2.1 2.6l-1.5 7.2a2.1 2.1 0 0 1-2.1 1.7H8z" fill="#ffc928" stroke="#e39b00" stroke-width="1" stroke-linejoin="round"/><path d="M10.6 12.2h6.2" stroke="#fff3b0" stroke-width="1.2" stroke-linecap="round" opacity=".8"/></svg></span>
+    <span class="button-wave offer-card__cta-text">বিস্তারিত দেখুন<span class="sr-only"> — এয়ারটেল ১০০ মিনিট ফ্রি </span></span>
+    <span class="offer-card__go"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.5 12h14m-5.5-6 6 6-6 6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.6"/></svg></span>
+  </a>
+</article>
+    </div>
+  </div>
+</section>
+
+<section class="contact-panel" id="contact-form" aria-labelledby="contact-form-title" data-reveal>
+  <div class="contact-panel__head">
+    <span class="sec-head__badge">সহায়তা দরকার?</span>
+    <h2 class="contact-panel__title" id="contact-form-title">আমাদের সাথে যোগাযোগ</h2>
+    <p class="contact-panel__sub">আপনার প্রশ্ন বা মতামত পাঠান। আমরা সাধারণত ১–২ কর্মদিবসের মধ্যে উত্তর দেওয়ার চেষ্টা করি।</p>
+  </div>
+  <form class="contact-form" id="inquiry-form" novalidate>
+    <div class="contact-form__grid">
+      <label>আপনার নাম<input name="name" autocomplete="name" required maxlength="80" placeholder="নাম লিখুন"></label>
+      <label>ইমেইল বা ফোন<input name="contact" autocomplete="email" required maxlength="120" placeholder="যোগাযোগের তথ্য লিখুন"></label>
+      <label>বিষয়<select name="topic"><option>অফার সম্পর্কে প্রশ্ন</option><option>রিচার্জ সহায়তা</option><option>ভুল তথ্য জানানো</option><option>অন্যান্য</option></select></label>
+      <label>আপনার বার্তা<textarea name="message" required maxlength="500" placeholder="আপনার প্রশ্ন বা বার্তা লিখুন"></textarea></label>
+    </div>
+    <p class="contact-form__note">এই ডেমো ফর্মে কোনো পেমেন্ট বা সংবেদনশীল তথ্য চাইবে না।</p>
+    <button class="btn-cta button-wave contact-form__submit" type="submit"><span>বার্তা পাঠান</span><span aria-hidden="true">→</span></button>
+    <div class="contact-form__success" id="inquiry-success" role="status" aria-live="polite">ধন্যবাদ। আপনার বার্তা গ্রহণ করা হয়েছে। আমাদের যোগাযোগ ব্যবস্থা সংযুক্ত হলে আমরা উত্তর দেব।</div>
+  </form>
+</section>
+
+    <nav class="quicknav" aria-label="দ্রুত লিংক" data-reveal><ul><li><a class="button-wave qnav" href="#offers"><span class="button-wave qnav__icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><rect x="3" y="3" width="4.6" height="4.6" rx="1.2"/><rect x="9.7" y="3" width="4.6" height="4.6" rx="1.2"/><rect x="16.4" y="3" width="4.6" height="4.6" rx="1.2"/><rect x="3" y="9.7" width="4.6" height="4.6" rx="1.2"/><rect x="9.7" y="9.7" width="4.6" height="4.6" rx="1.2"/><rect x="16.4" y="9.7" width="4.6" height="4.6" rx="1.2"/><rect x="3" y="16.4" width="4.6" height="4.6" rx="1.2"/><rect x="9.7" y="16.4" width="4.6" height="4.6" rx="1.2"/><rect x="16.4" y="16.4" width="4.6" height="4.6" rx="1.2"/></svg></span><span>সব অফার দেখুন</span></a></li><li><a class="button-wave qnav" href="#" data-coming-soon="রিচার্জ নির্দেশনা শীঘ্রই আসছে"><span class="button-wave qnav__icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="10.5"/><path d="M9.1 9.4a3 3 0 1 1 4.3 2.7c-.9.5-1.4 1-1.4 2" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/><circle cx="12" cy="17.4" r="1.3" fill="#fff"/></svg></span><span>কিভাবে রিচার্জ করবেন?</span></a></li><li><a class="button-wave qnav" href="#" data-coming-soon="সাধারণ প্রশ্নের উত্তর শীঘ্রই আসছে"><span class="button-wave qnav__icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.2 3.5h15.6a2 2 0 0 1 2 2v9.6a2 2 0 0 1-2 2H11l-5.4 4v-4H4.2a2 2 0 0 1-2-2V5.5a2 2 0 0 1 2-2z"/><circle cx="7.6" cy="10.3" r="1.4" fill="#fff"/><circle cx="12" cy="10.3" r="1.4" fill="#fff"/><circle cx="16.4" cy="10.3" r="1.4" fill="#fff"/></svg></span><span>সাধারণ প্রশ্ন (FAQ)</span></a></li><li><a class="button-wave qnav" href="contact.html#contact-form"><span class="button-wave qnav__icon"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><path d="M4.2 14.5v-2.6a7.8 7.8 0 0 1 15.6 0v2.6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.4"/><rect x="2.6" y="13" width="4.4" height="6.8" rx="2"/><rect x="17" y="13" width="4.4" height="6.8" rx="2"/><path d="M19.2 19.8c0 1.4-1.6 2.2-4 2.2h-2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/></svg></span><span>আমাদের সাথে যোগাযোগ</span></a></li></ul></nav>
+  </main>
+  
+<section class="countdown" aria-labelledby="cd-title">
+  <span class="countdown__gift"><svg viewBox="0 0 64 64" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><rect x="9" y="26" width="46" height="9" rx="2.5" fill="#ff8a00"/><rect x="12" y="35" width="40" height="21" rx="3" fill="#ff6a00"/><rect x="28" y="26" width="8" height="30" fill="#ffd33d"/><path d="M32 26c-6-1-13-3-13-9 0-4 3.5-6 7-5 4 1.200 6 8 6 14zM32 26c6-1 13-3 13-9 0-4-3.500-6-7-5-4 1.200-6 8-6 14z" fill="#ffb02e"/><rect x="9" y="26" width="46" height="4" rx="2" fill="#fff" opacity=".22"/></svg></span>
+  <div class="countdown__text">
+    <h2 id="cd-title">সময় শেষ হওয়ার আগে আপনার অফারটি বেছে নিন</h2>
+    <p>সেরা অফার সবসময় সবার জন্য নয়, তাই দেরি না করে এখনই দেখে নিন!</p>
+  </div>
+  <div class="countdown__timer" id="countdown" role="timer" data-deadline="">
+    <span class="countdown__label"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/><path d="M12 6.6V12l3.6 2.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/></svg><span>অবশিষ্ট সময়</span></span>
+    <div class="countdown__digits">
+      <div><b data-u="h">০০</b><small>ঘণ্টা</small></div><i>:</i>
+      <div><b data-u="m">০০</b><small>মিনিট</small></div><i>:</i>
+      <div><b data-u="s" class="tick">০০</b><small>সেকেন্ড</small></div>
+    </div>
+  </div>
+</section>
+</div>
+
+<footer class="footer">
+  <nav aria-label="ফুটার লিংক"><ul><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms &amp; Conditions</a></li><li><a href="refund.html">Refund Policy</a></li><li><a href="contact.html#contact-form">Contact Us</a></li></ul></nav>
+  <p>© 2026 bdoffer.online — All rights reserved.</p>
+</footer>
+<script>
+/* Progressive enhancement only: countdown + section reveal. */
+(() => {
+  const bn = (n) => String(n).padStart(2, '0').replace(/\d/g, (d) => '০১২৩৪৫৬৭৮৯'[d]);
+
+  /* Countdown */
+  const el = document.getElementById('countdown');
+  if (el) {
+    const q = (u) => el.querySelector(`[data-u="${u}"]`);
+    const parsed = Date.parse(el.dataset.deadline || '');
+    const end = () => (Number.isNaN(parsed) ? new Date().setHours(23, 59, 59, 999) : parsed);
+    const paint = () => {
+      const left = Math.max(0, end() - Date.now());
+      q('h').textContent = bn(Math.floor(left / 3.6e6));
+      q('m').textContent = bn(Math.floor(left / 6e4) % 60);
+      q('s').textContent = bn(Math.floor(left / 1e3) % 60);
+    };
+    paint();
+    setInterval(() => { if (!document.hidden) paint(); }, 1000);
+  }
+
+  /* Reveal */
+  const items = document.querySelectorAll('[data-reveal]');
+  if (!('IntersectionObserver' in window)) { items.forEach((i) => i.classList.add('is-in')); return; }
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+  items.forEach((i) => io.observe(i));
+})();
+
+</script>
+
+<script id="ui-enhancements-runtime">
+(() => {
+  'use strict';
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const bn = (n) => String(Math.max(0, n)).padStart(2, '0').replace(/\d/g, d => '০১২৩৪৫৬৭৮৯'[d]);
+  let toastTimer;
+  const toast = (message) => {
+    let node = $('.ui-toast');
+    if (!node) {
+      node = document.createElement('div');
+      node.className = 'ui-toast';
+      node.setAttribute('role', 'status');
+      node.setAttribute('aria-live', 'polite');
+      document.body.append(node);
+    }
+    node.textContent = message;
+    node.classList.add('is-visible');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => node.classList.remove('is-visible'), 3200);
+  };
+
+  // Countdown with a safe end-of-day fallback and a visible zero state.
+  try {
+    const timer = $('#countdown');
+    if (timer) {
+      const parsed = Date.parse(timer.dataset.deadline || '');
+      const fallback = new Date(); fallback.setHours(23, 59, 59, 999);
+      const end = Number.isNaN(parsed) ? fallback.getTime() : parsed;
+      const paint = () => {
+        const left = Math.max(0, end - Date.now());
+        const set = (unit, value) => { const node = timer.querySelector(`[data-u="${unit}"]`); if (node) node.textContent = bn(value); };
+        set('h', Math.floor(left / 3.6e6));
+        set('m', Math.floor(left / 6e4) % 60);
+        set('s', Math.floor(left / 1e3) % 60);
+        timer.dataset.expired = left === 0 ? 'true' : 'false';
+      };
+      paint();
+      window.setInterval(() => { if (!document.hidden) paint(); }, 1000);
+    }
+  } catch (error) { console.warn('Countdown unavailable', error); }
+
+  // Progressive reveal with a no-JS-safe fallback.
+  try {
+    const items = $$('[data-reveal]');
+    if (!('IntersectionObserver' in window)) items.forEach(item => item.classList.add('is-in'));
+    else {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add('is-in'); observer.unobserve(entry.target); }
+      }), { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
+      items.forEach(item => observer.observe(item));
+    }
+  } catch (error) { $$('[data-reveal]').forEach(item => item.classList.add('is-in')); }
+
+  // Filter offers by operator without changing the page URL.
+  try {
+    const heading = $('.sec-head');
+    const cards = $$('.offer-card');
+    if (heading && cards.length) {
+      const filter = document.createElement('div');
+      filter.className = 'offer-filter';
+      filter.setAttribute('role', 'toolbar');
+      filter.setAttribute('aria-label', 'অপারেটর অনুযায়ী অফার বাছাই');
+      filter.innerHTML = '<span class="offer-filter__label">অপারেটর বাছাই:</span>' +
+        [['all','সবগুলো'],['gp','গ্রামীণফোন'],['banglalink','বাংলালিংক'],['robi','রবি'],['airtel','এয়ারটেল']].map(([key,label], index) => `<button type="button" data-filter="${key}" aria-pressed="${index === 0}">${label}</button>`).join('');
+      heading.insertAdjacentElement('afterend', filter);
+      filter.addEventListener('click', event => {
+        const button = event.target.closest('button[data-filter]');
+        if (!button) return;
+        const key = button.dataset.filter;
+        $$('button[data-filter]', filter).forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+        cards.forEach(card => card.classList.toggle('is-filtered', key !== 'all' && !card.id.startsWith(`${key}-`)));
+        toast(key === 'all' ? 'সব অপারেটরের অফার দেখানো হচ্ছে' : `${button.textContent} এর অফার দেখানো হচ্ছে`);
+      });
+    }
+  } catch (error) { console.warn('Offer filter unavailable', error); }
+
+  // CTA feedback for this static demo page.
+  $$('.offer-card__cta').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    const card = event.currentTarget.closest('.offer-card');
+    const operator = $('.offer-card__op', card)?.textContent?.trim() || 'এই অপারেটর';
+    toast(`${operator} অফারটি নির্বাচিত হয়েছে — অ্যাক্টিভেশন সংযোগ শিগগিরই যোগ হবে`);
+  }));
+
+  // Back-to-top control improves long-page mobile navigation.
+  const back = document.createElement('button');
+  back.className = 'back-top';
+  back.type = 'button';
+  back.setAttribute('aria-label', 'উপরে ফিরে যান');
+  back.textContent = '↑';
+  document.body.append(back);
+  const toggleBack = () => back.classList.toggle('is-visible', window.scrollY > 520);
+  window.addEventListener('scroll', toggleBack, { passive: true });
+  back.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+  toggleBack();
+
+  // Graceful runtime error handling: keep the page usable and notify non-technical users.
+  window.addEventListener('error', event => { console.error(event.error || event.message); toast('কিছু ফিচার সাময়িকভাবে কাজ করছে না। পেজটি রিফ্রেশ করে আবার চেষ্টা করুন।'); });
+  window.addEventListener('unhandledrejection', event => { console.error(event.reason); toast('অনুরোধটি সম্পন্ন হয়নি। আবার চেষ্টা করুন।'); });
+})();
+</script>
+
+
+<script id="real-logo-bobble-runtime">
+(() => {
+  'use strict';
+  const base = 'assets/logos/';
+  const assets = {
+    gp: ['grameenphone.png', 'গ্রামীণফোন'],
+    grameenphone: ['grameenphone.png', 'গ্রামীণফোন'],
+    banglalink: ['banglalink.png', 'বাংলালিংক'],
+    robi: ['robi.png', 'রবি'],
+    airtel: ['airtel.png', 'এয়ারটেল']
+  };
+  const logo = (key, size, extra = '') => {
+    const item = assets[key];
+    if (!item) return '';
+    const image = document.createElement('img');
+    image.className = 'real-logo';
+    image.src = base + item[0];
+    image.alt = item[1];
+    image.loading = 'eager';
+    image.onerror = () => { image.closest('.logo-bobble')?.remove(); };
+    const wrap = document.createElement('span');
+    wrap.className = `logo-bobble logo-bobble--${size} ${extra}`;
+    wrap.setAttribute('aria-hidden', 'true');
+    wrap.append(image);
+    return wrap;
+  };
+  const stack = (size) => {
+    const wrap = document.createElement('span');
+    wrap.className = 'logo-stack';
+    ['gp', 'banglalink', 'robi', 'airtel'].forEach(key => wrap.append(logo(key, size)));
+    return wrap;
+  };
+  const keyFor = (value) => {
+    const text = value.toLowerCase();
+    if (text.includes('গ্রামীণ') || text.includes('grameen')) return 'gp';
+    if (text.includes('বাংলালিংক') || text.includes('banglalink')) return 'banglalink';
+    if (text.includes('রবি') || text.includes('robi')) return 'robi';
+    if (text.includes('এয়ারটেল') || text.includes('airtel')) return 'airtel';
+    return null;
+  };
+
+  // Use real logos in the hero operator rail.
+  document.querySelectorAll('.op-quick').forEach(button => {
+    const key = keyFor(button.textContent || button.getAttribute('href') || '');
+    const old = button.querySelector('.op-quick__logo');
+    if (old && key) { old.replaceChildren(logo(key, 'quick')); }
+  });
+
+  // Use real logos in every offer card action.
+  document.querySelectorAll('.offer-card').forEach(card => {
+    const key = keyFor(card.textContent || card.id);
+    if (!key) return;
+    const existing = card.querySelector('.offer-card__logo');
+    if (existing) existing.replaceChildren(logo(key, 'card'));
+    const cta = card.querySelector('.offer-card__cta');
+    if (cta && !cta.querySelector('.logo-bobble')) cta.prepend(logo(key, 'card'));
+  });
+
+  // Make the main CTA and section pills feel branded without changing the text.
+  const heroCta = document.querySelector('.btn-cta');
+  if (heroCta && !heroCta.querySelector('.logo-stack')) heroCta.prepend(stack('hero'));
+  document.querySelectorAll('.pill-btn').forEach(button => {
+    if (!button.querySelector('.logo-stack')) button.prepend(stack('stack'));
+  });
+
+  // Decorate dynamically-created filter buttons with the matching real logo.
+  document.querySelectorAll('.offer-filter button').forEach(button => {
+    const key = button.dataset.filter;
+    if (key === 'all') button.prepend(stack('filter'));
+    else if (assets[key]) button.prepend(logo(key, 'filter'));
+  });
+})();
+</script>
+
+
+<script id="real-logo-bobble-fix-runtime">
+(() => {
+  'use strict';
+  // The original CTA included a thumbs-up decoration; the real operator mark is now the sole icon.
+  document.querySelectorAll('.offer-card__cta .logo-bobble').forEach(() => {
+    document.querySelectorAll('.offer-card__cta .offer-card__thumb').forEach(icon => icon.remove());
+  });
+})();
+</script>
+
+
+<script id="site-feature-runtime">
+(() => {
+  'use strict';
+  document.querySelectorAll('.btn-cta, .pill-btn, .offer-card__cta, .qnav, .offer-filter button').forEach(el => el.classList.add('button-wave'));
+  document.querySelectorAll('[data-coming-soon]').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    const message = link.dataset.comingSoon || 'এই ফিচারটি শীঘ্রই আসছে';
+    let toast = document.querySelector('.ui-toast');
+    if (!toast) { toast = document.createElement('div'); toast.className = 'ui-toast'; toast.setAttribute('role', 'status'); document.body.append(toast); }
+    toast.textContent = message;
+    toast.classList.add('is-visible');
+    window.clearTimeout(window.__comingSoonTimer);
+    window.__comingSoonTimer = window.setTimeout(() => toast.classList.remove('is-visible'), 2800);
+  }));
+  const form = document.getElementById('inquiry-form');
+  const success = document.getElementById('inquiry-success');
+  if (form && success) form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.checkValidity()) { form.reportValidity(); return; }
+    success.classList.add('is-visible');
+    form.reset();
+  });
+})();
+</script>
+
+
+<script id="contact-ui-runtime">
+(() => {
+  'use strict';
+  const showComing = (message) => {
+    let tip = document.querySelector('.coming-tooltip');
+    if (!tip) { tip = document.createElement('div'); tip.className = 'coming-tooltip'; tip.setAttribute('role', 'status'); tip.setAttribute('aria-live', 'polite'); document.body.append(tip); }
+    tip.textContent = message;
+    tip.classList.add('is-visible');
+    clearTimeout(window.__comingTooltipTimer);
+    window.__comingTooltipTimer = setTimeout(() => tip.classList.remove('is-visible'), 3000);
+  };
+  document.querySelectorAll('[data-coming-soon]').forEach(link => link.addEventListener('click', event => {
+    event.preventDefault();
+    showComing(link.dataset.comingSoon || 'এই সুবিধাটি শীঘ্রই আসছে');
+  }));
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+/* ===== DESIGN TOKENS ===== */
+:root {
+  /* color */
+  --c-ink: #0d1b4c;
+  --c-ink-2: #22336f;
+  --c-muted: #55668f;
+  --c-page: #eef6fe;
+  --c-surface: #fff;
+  --c-blue: #0a5ee0;
+  --c-blue-2: #2d9cff;
+  --c-sky: #7ac2fd;
+  --c-red: #e8102f;
+  --c-red-deep: #c30a24;
+  --c-orange: #ff6a00;
+  --c-orange-text: #f0470f;
+  --c-gold: #ffc21a;
+  --c-green: #12a150;
+  --c-navy-deep: #050b24;
+  --c-border: rgb(255 255 255 / .75);
+  --c-line: rgb(90 140 210 / .22);
+
+  /* spacing */
+  --sp-xs: .25rem; --sp-sm: .5rem; --sp-md: .75rem; --sp-lg: 1rem; --sp-xl: 1.5rem; --sp-2xl: 2.25rem;
+  --section-gap: clamp(.75rem, 2.6vw, 1.4rem);
+  --page-pad: clamp(.6rem, 2.4vw, 1.5rem);
+  --page-max: 68rem;
+
+  /* radius */
+  --r-sm: 10px; --r-md: 16px; --r-lg: 22px; --r-xl: 30px; --r-pill: 999px;
+
+  /* shadow */
+  --sh-subtle: 0 2px 6px -2px rgb(20 50 120 / .18);
+  --sh-card: 0 14px 24px -16px rgb(20 60 150 / .45), 0 2px 0 rgb(255 255 255 / .9) inset;
+  --sh-elevated: 0 24px 44px -18px rgb(10 50 160 / .5);
+  --sh-glow: 0 0 0 4px rgb(255 255 255 / .55), 0 10px 24px -6px var(--op-glow, rgb(30 130 255 / .45));
+
+  /* type */
+  --font-body: 'Hind Siliguri', 'Noto Sans Bengali', 'Kohinoor Bangla', 'Nirmala UI', 'Segoe UI', system-ui, sans-serif;
+  --font-display: 'Baloo Da 2', 'Hind Siliguri', 'Noto Sans Bengali', 'Kohinoor Bangla', 'Nirmala UI', system-ui, sans-serif;
+  --font-script: 'Caveat', 'Segoe Script', 'Bradley Hand', cursive;
+  --fs-xs: .72rem; --fs-sm: .82rem; --fs-body: .95rem; --fs-label: .88rem;
+  --fs-heading: clamp(1.1rem, 4.4vw, 1.5rem);
+  --fs-display: clamp(2.8rem, 15.4vw, 5rem);
+  --fs-cta: clamp(1.15rem, 5vw, 1.4rem);
+
+  /* motion */
+  --t-fast: 180ms; --t-normal: 320ms; --t-slow: 600ms; --t-ambient: 7s;
+  --ease: cubic-bezier(.22, .8, .3, 1);
+
+  /* z */
+  --z-sticky: 30;
+}
+
+@media (min-width: 800px) {
+  :root { --fs-display: clamp(3.6rem, 8.3vw, 6.1rem); --fs-body: 1rem; }
+}
