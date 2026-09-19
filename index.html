@@ -420,12 +420,13 @@ svg { display: block; }
 .qnav__icon { flex: none; font-size: 1.55rem; color: #0a5ee0; }
 
 .countdown { --cd-h: 1; position: sticky; bottom: max(10px, env(safe-area-inset-bottom)); z-index: var(--z-sticky);
-  display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 10px; margin-top: var(--section-gap); padding: 10px 12px; border-radius: 22px; color: #fff;
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto auto; align-items: center; gap: 10px; margin-top: var(--section-gap); padding: 10px 12px; border-radius: 22px; color: #fff;
   background: radial-gradient(22rem 8rem at 0 0, rgb(40 80 190 / .35), transparent 70%), linear-gradient(160deg, #0d1a45, #040a20);
   box-shadow: 0 0 0 1px rgb(120 170 255 / .28), 0 18px 30px -12px rgb(2 10 50 / .8), inset 0 1px 0 rgb(255 255 255 / .16); }
 .countdown__gift { font-size: 2.3rem; filter: drop-shadow(0 6px 8px rgb(255 120 0 / .45)); }
 .countdown__text h2 { font: 700 .82rem/1.3 var(--font-display); }
 .countdown__text p { display: none; font-size: .82rem; color: #b9c8ee; }
+.countdown__cta { display: inline-flex; align-items: center; justify-content: center; min-height: 2rem; padding: 0 .7rem; border-radius: 999px; background: linear-gradient(135deg, #ff3d4f, #e8102f); color: #fff; font: 800 .72rem/1 var(--font-display); white-space: nowrap; box-shadow: 0 6px 12px -8px #ff3048; }
 .countdown__timer { padding: 6px 10px 5px; border-radius: 14px; text-align: center; background: rgb(255 255 255 / .05); box-shadow: inset 0 0 0 1.5px rgb(255 194 26 / .55), 0 0 18px -6px rgb(255 194 26 / .45); }
 .no-js .countdown__timer { display: none; }
 .countdown__label { display: none; align-items: center; justify-content: center; gap: 6px; margin-bottom: 2px; font-size: .72rem; color: #dbe6ff; }
@@ -499,11 +500,15 @@ svg { display: block; }
     .offer-filter { align-items: stretch; margin-inline: 2px; }
     .offer-filter__label { flex-basis: 100%; }
     .offer-filter button { flex: 1 1 calc(50% - 8px); }
-    .countdown { grid-template-columns: 1fr auto; gap: 8px; padding: 9px; }
+    .countdown { grid-template-columns: minmax(0, 1fr) auto auto; gap: 6px; padding: 6px 7px; border-radius: 16px; }
     .countdown__gift { display: none; }
     .countdown__text p { display: none; }
-    .countdown__text h2 { font-size: .9rem; line-height: 1.25; }
-    .countdown__timer { min-width: 112px; }
+    .countdown__text h2 { font-size: .72rem; line-height: 1.15; }
+    .countdown__cta { min-height: 1.8rem; padding-inline: .55rem; font-size: .66rem; }
+    .countdown__timer { min-width: 96px; padding: 4px 6px; border-radius: 11px; }
+    .countdown__digits b { font-size: 1.05rem; }
+    .countdown__digits i { font-size: .95rem; }
+    .countdown__digits small { font-size: .52rem; }
     .footer { text-align: center; }
     .footer nav ul { justify-content: center; }
   }
@@ -763,6 +768,7 @@ svg { display: block; }
     <h2 id="cd-title">সময় শেষ হওয়ার আগে আপনার অফারটি বেছে নিন</h2>
     <p>সেরা অফার সবসময় সবার জন্য নয়, তাই দেরি না করে এখনই দেখে নিন!</p>
   </div>
+  <a class="countdown__cta" href="#offers">অফার দেখুন →</a>
   <div class="countdown__timer" id="countdown" role="timer" data-deadline="">
     <span class="countdown__label"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="currentColor" aria-hidden="true" focusable="false" ><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/><path d="M12 6.6V12l3.6 2.2" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"/></svg><span>অবশিষ্ট সময়</span></span>
     <div class="countdown__digits">
