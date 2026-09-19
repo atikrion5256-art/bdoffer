@@ -13,6 +13,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@600;700;800&family=Caveat:wght@400;600&family=Hind+Siliguri:wght@400;500;600;700&display=swap">
+<link rel="preload" as="image" href="assets/hero/hero-image-v2.webp" type="image/webp" imagesrcset="assets/hero/hero-image-v2-900.webp 900w, assets/hero/hero-image-v2.webp 1806w" imagesizes="100vw">
 <style>
 /* ===== DESIGN TOKENS ===== */
 :root {
@@ -647,6 +648,7 @@ svg { display: block; }
   :root { --fs-body: 1rem; --fs-label: .9rem; --content-leading: 1.58; }
   body { line-height: var(--content-leading); }
   img { max-width: 100%; }
+  .hero-image-full picture { display: block; }
   .offers { gap: clamp(14px, 2.6vw, 22px); }
   .sec-head { gap: 8px; padding-block: 6px 4px; }
   .sec-head__title { line-height: 1.08; }
@@ -747,7 +749,10 @@ svg { display: block; }
     
 <section class="hero hero--image-only" aria-labelledby="hero-title">
   <figure class="hero-image-full">
-    <img src="assets/hero/hero-image-v2.png" alt="ইন্টারনেট ও মিনিট অফারের প্রচারচিত্র" loading="eager" fetchpriority="high">
+    <picture>
+      <source type="image/webp" srcset="assets/hero/hero-image-v2-900.webp 900w, assets/hero/hero-image-v2.webp 1806w" sizes="100vw">
+      <img src="assets/hero/hero-image-v2.png" alt="ইন্টারনেট ও মিনিট অফারের প্রচারচিত্র" width="1806" height="801" loading="eager" fetchpriority="high">
+    </picture>
     <figcaption class="sr-only" id="hero-title">সব অপারেটরের ইন্টারনেট ও মিনিট অফার</figcaption>
   </figure>
 </section>

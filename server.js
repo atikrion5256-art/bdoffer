@@ -49,7 +49,7 @@ async function serveStatic(res, pathname) {
   const requested = pathname === '/' ? '/index.html' : pathname;
   const filePath = path.resolve(ROOT, `.${requested}`);
   if (!filePath.startsWith(ROOT + path.sep)) { res.statusCode = 404; return res.end('Not found'); }
-  try { const body = await fs.readFile(filePath); const ext = path.extname(filePath); const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.svg': 'image/svg+xml' }; res.statusCode = 200; res.setHeader('Content-Type', types[ext] || 'application/octet-stream'); res.setHeader('Cache-Control', ext === '.html' ? 'no-store' : 'public, max-age=3600'); res.end(body); } catch (error) { res.statusCode = error.code === 'ENOENT' ? 404 : 500; res.end(error.code === 'ENOENT' ? 'Not found' : 'Internal server error'); }
+  try { const body = await fs.readFile(filePath); const ext = path.extname(filePath); const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.webp': 'image/webp', '.avif': 'image/avif', '.svg': 'image/svg+xml' }; res.statusCode = 200; res.setHeader('Content-Type', types[ext] || 'application/octet-stream'); res.setHeader('Cache-Control', ext === '.html' ? 'no-store' : 'public, max-age=3600'); res.end(body); } catch (error) { res.statusCode = error.code === 'ENOENT' ? 404 : 500; res.end(error.code === 'ENOENT' ? 'Not found' : 'Internal server error'); }
 }
 
 const server = http.createServer(async (req, res) => {

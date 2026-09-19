@@ -32,6 +32,9 @@ jobs:
           cp index.html standalone.html contact.html faq.html how-to-recharge.html privacy.html refund.html terms.html _site/
           cp -R assets/. _site/assets/
 
+      - name: Validate local asset references
+        run: python3 scripts/validate-static-assets.py
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
