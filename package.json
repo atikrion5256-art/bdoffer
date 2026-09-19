@@ -1,7 +1,0 @@
-{
-  "name": "bdoffer-landing",
-  "version": "1.0.0",
-  "private": true,
-  "description": "bdoffer.online — Internet & Minute offer landing page (static prerender, zero runtime deps)",
-  "scripts": { "build": "node build.js" }
-}

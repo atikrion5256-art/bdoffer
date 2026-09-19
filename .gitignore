@@ -1,0 +1,5 @@
+.admin-env
+data/
+_site/
+*.log
+.DS_Store
