@@ -642,6 +642,84 @@ svg { display: block; }
   }
 </style>
 
+<style id="white-design-polish">
+  /* A quieter interaction layer: responsive, tactile, and intentionally restrained. */
+  :root { --fs-body: 1rem; --fs-label: .9rem; --content-leading: 1.58; }
+  body { line-height: var(--content-leading); }
+  img { max-width: 100%; }
+  .offers { gap: clamp(14px, 2.6vw, 22px); }
+  .sec-head { gap: 8px; padding-block: 6px 4px; }
+  .sec-head__title { line-height: 1.08; }
+  .sec-head__sub { max-width: 38ch; line-height: 1.45; }
+  .sub { padding: clamp(13px, 2.4vw, 18px); gap: 14px; }
+  .sub-head { gap: 11px 14px; }
+  .sub-head__sub { line-height: 1.4; }
+  .offer-grid { gap: 12px; }
+  .offer-card { gap: 3px; padding: 14px 10px 10px; transition: transform var(--t-normal) var(--ease), box-shadow var(--t-normal) var(--ease), border-color var(--t-normal) var(--ease); }
+  .offer-card__op { line-height: 1.3; }
+  .offer-card__amt { line-height: 1.08; }
+  .offer-card__label { margin-bottom: .6rem; line-height: 1.3; }
+  .offer-card__cta { min-height: 2.8rem; transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease), background var(--t-fast); }
+  .pill-btn, .qnav, .offer-filter button, .back-top, .footer a { transition: transform var(--t-fast) var(--ease), box-shadow var(--t-fast) var(--ease), filter var(--t-fast), color var(--t-fast), background var(--t-fast); }
+  .pill-btn:hover, .qnav:hover { transform: translateY(-2px); filter: brightness(1.03); }
+  .pill-btn:active, .qnav:active, .offer-filter button:active { transform: translateY(1px) scale(.98); }
+  .qnav:hover { box-shadow: 0 14px 20px -14px rgb(30 80 190 / .7), inset 0 0 0 1px rgb(255 255 255 / .9), 0 0 0 1px rgb(120 175 235 / .35); }
+  .qnav:hover .qnav__icon { transform: translateY(-1px) scale(1.06); }
+  .qnav__icon { transition: transform var(--t-fast) var(--ease); }
+  .offer-card__cta:hover { transform: translateY(-1px); box-shadow: 0 12px 18px -11px rgb(30 50 110 / .72), inset 0 1px 0 #fff, 0 0 0 1px rgb(var(--op-rgb) / .18); }
+  .offer-card__go { transition: transform var(--t-fast) var(--ease), filter var(--t-fast); }
+  .offer-card__cta:hover .offer-card__go { transform: translateX(2px); filter: brightness(1.08); }
+  .offer-filter button:hover { box-shadow: 0 7px 14px rgb(26 73 145 / .12); }
+  .footer a:hover { transform: translateY(-1px); }
+  .countdown__text h2 { letter-spacing: .005em; }
+  @media (max-width: 759px) {
+    .page { padding-inline: clamp(.72rem, 3.2vw, 1.1rem); }
+    .offers { padding: 16px 12px 15px; }
+    .sec-head__sub { font-size: .9rem; }
+    .sub-head__title { letter-spacing: -.01em; }
+    .offer-card { padding: 13px 9px 9px; }
+    .offer-card__amt { font-size: clamp(1.35rem, 6vw, 1.75rem); }
+    .quicknav ul { gap: 9px; }
+    .qnav { min-height: 3.25rem; padding-inline: 10px; }
+  }
+  @media (max-width: 560px) {
+    .hero.hero--image-only, .hero-image-full img { border-radius: 22px; }
+    .offers { border-radius: 24px; }
+    .sec-head { gap: 7px; }
+    .sec-head__title { max-width: 12ch; font-size: clamp(1.9rem, 9vw, 2.45rem); }
+    .sec-head__sub { max-width: 29ch; }
+    .sub { padding: 13px 11px; border-radius: 20px; gap: 12px; }
+    .sub-head { grid-template-columns: auto minmax(0, 1fr) auto; gap: 9px; }
+    .sub-head__icon { width: 2.85rem; height: 2.85rem; font-size: 1.65rem; border-radius: 13px; }
+    .sub-head__title { font-size: clamp(1.05rem, 4.8vw, 1.28rem); }
+    .sub-head__sub { font-size: .76rem; }
+    .sub-head__badge { width: 3.15rem; height: 3.15rem; }
+    .sub-head__badge svg { font-size: 1.15rem; }
+    .sub-head__badge b { font-size: .7rem; }
+    .offer-grid { gap: 9px; }
+    .offer-card { border-radius: 17px; padding: 12px 7px 8px; }
+    .offer-card__op { font-size: .82rem; }
+    .offer-card__amt { font-size: clamp(1.18rem, 5.7vw, 1.48rem); }
+    .offer-card__label { font-size: .68rem; margin-bottom: .45rem; }
+    .offer-card__cta { min-height: 2.6rem; padding-inline-start: 6px; font-size: .72rem; }
+    .offer-card__go { width: 2rem; height: 2rem; font-size: .96rem; }
+    .countdown__text h2 { white-space: normal; overflow: visible; text-overflow: clip; line-height: 1.18; }
+    .footer { padding-top: 15px; }
+  }
+  @media (max-width: 380px) {
+    .page { padding-inline: .58rem; }
+    .offers { padding-inline: 9px; }
+    .sub-head__script { display: none; }
+    .offer-card__amt { font-size: 1.12rem; }
+    .offer-card__cta-text { font-size: .68rem; }
+    .countdown { gap: 8px; }
+    .countdown__timer { min-width: 7.5rem; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pill-btn:hover, .qnav:hover, .offer-card__cta:hover, .footer a:hover { transform: none; }
+  }
+</style>
+
 
 <style id="contact-ui-polish">
   .contact-panel { width: min(100%, 760px); margin-inline: auto; }
