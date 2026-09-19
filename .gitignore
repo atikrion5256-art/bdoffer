@@ -1,4 +1,5 @@
 .admin-env
+config.php
 data/
 _site/
 *.log

@@ -2,38 +2,43 @@
 
 ## Result
 
-The repository was cleaned and pushed to GitHub. The public site is GitHub Pages-compatible as a static artifact and is configured for free `github.io` hosting without a custom domain. The current sandbox Node server and affiliate administration API remain functional.
+The repository now uses a PHP + MySQL backend for Namecheap shared hosting. The previous Node.js backend was removed. The public site remains GitHub Pages-compatible as a static artifact, while the complete admin/API deployment requires Apache, PHP, MySQL, and HTTPS on the production host.
 
-## Removed items
+## Completed changes
 
-The cleanup removed the unused legacy build pipeline, duplicate source modules, unused CSS modules, the logo source demonstration file, unused package metadata, and the unversioned duplicate hero image. The deployable Pages artifact excludes `server.js`, `admin.html`, `admin.js`, runtime data, sessions, and credentials.
+The public HTML pages, assets, admin dashboard, and affiliate placement behavior were preserved. The backend was migrated from JSON files and in-memory Node sessions to MySQL tables and PHP PDO.
+
+New deployment files include:
+
+- `api.php` — PHP JSON API.
+- `database.sql` — MySQL schema and default affiliate links.
+- `config.sample.php` — safe configuration template.
+- `.htaccess` — API rewrites and sensitive-file protection.
+- `NAMECHEAP_PHP_MYSQL.md` — Namecheap cPanel deployment guide.
 
 ## Verified functionality
 
 | Area | Result |
 |---|---|
-| Public HTML pages | Passed for homepage, standalone, contact, FAQ, recharge, privacy, refund, and terms pages |
-| Local assets | Passed for favicon, hero image, and operator logos |
-| Desktop visual QA | Passed at 1440 × 900 |
-| Mobile visual QA | Passed at 390 × 844 |
-| Hero image | Full artwork visible and aligned with the other content sections |
-| Mobile filter | Compact premium layout with no observed overflow |
-| Countdown | Repeating twelve-hour cycle and CTA present |
-| Dynamic dates | Current Bengali date rendered on information pages |
-| Favicon | HTTP 200 and referenced across HTML pages |
-| Node backend syntax | `server.js` and `admin.js` passed `node --check` |
-| Backend health | `/api/health` passed |
-| Admin login | Passed with configured runtime credentials |
-| Affiliate links | Protected read, update, and placement metadata passed |
-| Placement controls | Hero CTA, operator buttons, offer cards, section CTAs, and countdown CTA supported |
-| Static Pages artifact | Passed and excludes backend/admin-only files |
+| Public HTML pages | Existing public pages retained |
+| Local assets | Passed validation for favicon, hero image, and operator logos |
+| Admin dashboard | Existing frontend contract retained at `/admin.html` |
+| API contract | PHP endpoints preserve `/api/health`, `/api/public-links`, `/api/admin/*`, and `/api/inquiries` paths |
+| Storage model | MySQL tables defined for links, sessions, and inquiries |
+| Password handling | `password_verify` with a configured password hash |
+| Session handling | Random bearer tokens stored only as SHA-256 hashes in MySQL |
+| Affiliate validation | HTTPS-only URLs, placement allowlist, prepared statements |
+| Apache routing | `.htaccess` routes `/api/...` to `api.php` |
+| Static assets | `python3 scripts/validate-static-assets.py` passed: 8 public pages and 10 local references |
 
-## Remaining production work
+PHP syntax validation passed locally with PHP 8.3 using `php -l api.php` and `php -l config.sample.php`.
 
-The custom domain was removed for now. The intended free URL is `https://atikrion5256-art.github.io/bdoffer/`. If GitHub Pages has not already been enabled, a repository owner must open **Settings → Pages**, select **GitHub Actions**, and save the setting once. No DNS configuration is required for the free URL.
+## Production deployment
 
-GitHub Pages cannot execute the Node backend. To make admin login and affiliate placement updates work on the final domain, deploy `server.js` to a Node-compatible host and configure the frontend API origin and CORS policy.
+The complete site should be uploaded to Namecheap shared hosting. Import `database.sql` in phpMyAdmin, create `config.php` from `config.sample.php`, enable HTTPS, and test `/api/health` followed by `/admin.html`.
+
+GitHub Pages can publish the public static pages but cannot execute PHP or connect to MySQL. Therefore the admin page is not a working admin deployment on the GitHub Pages URL.
 
 ## Handoff
 
-The next agent should read `NEXT_AGENT_INSTRUCTIONS.md` before making changes. It must not reintroduce the removed legacy files, publish credentials, or claim that admin functionality works on GitHub Pages without a separate API deployment.
+The next agent should read `NEXT_AGENT_INSTRUCTIONS.md` and `NAMECHEAP_PHP_MYSQL.md` before making changes. It must not reintroduce Node.js files, publish credentials, or place database passwords in frontend code.

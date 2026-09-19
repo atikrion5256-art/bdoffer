@@ -1,46 +1,60 @@
 # bdoffer.online
 
-bdoffer.online is a responsive Bengali offer-directory site for internet and minute offers. The public website is configured for free GitHub Pages hosting at:
-
-`https://atikrion5256-art.github.io/bdoffer/`
+`bdoffer.online` is a responsive Bengali offer-directory site for internet and minute offers. This repository now uses a **PHP + MySQL backend designed for Namecheap shared hosting**. The previous Node.js backend has been removed.
 
 ## What is included
 
-The public pages include the homepage, standalone offer page, contact page, FAQ, recharge instructions, privacy policy, refund policy, and terms and conditions. The supplied hero artwork is served as `assets/hero/hero-image-v2.png`. Operator logos and the branded favicon are stored under `assets/`.
+The public pages include the homepage, standalone offer page, contact page, FAQ, recharge instructions, privacy policy, refund policy, and terms and conditions. Hero artwork, operator logos, and the favicon are stored under `assets/`.
 
-The homepage includes a repeating twelve-hour countdown, a mobile-optimized operator filter, responsive offer cards, current-date rendering on information pages, and cache-safe asset references.
+The admin system includes:
 
-The repository also contains `admin.html`, `admin.js`, and `server.js` for a separate Node.js backend deployment. These files are intentionally excluded from the GitHub Pages artifact because GitHub Pages cannot execute Node.js or provide API routes.
+- `admin.html` and `admin.js` for the browser dashboard.
+- `api.php` for the PHP JSON API.
+- `database.sql` for MySQL tables and default affiliate links.
+- `config.sample.php` as the safe configuration template.
+- `.htaccess` to route `/api/...` requests to PHP and protect sensitive files.
 
-## GitHub Pages deployment
+The dashboard supports affiliate-link creation, URL updates, activation changes, deletion, and placement assignment. Links can be assigned to the Hero CTA, operator buttons, offer cards, section CTAs, or countdown CTA. Contact inquiries are stored in MySQL and are available through the authenticated inquiry endpoint.
 
-The workflow at `.github/workflows/pages.yml` builds a clean `_site` artifact containing only public static files. It excludes the backend, admin source, runtime data, credentials, and development artifacts. `.nojekyll` is included. No custom domain or DNS configuration is required in the current free-hosting mode.
+## Namecheap shared-hosting deployment
 
-To use the free GitHub Pages URL, open **Settings → Pages** and select **GitHub Actions** as the source if GitHub has not already enabled it. The site is then available at the `github.io/bdoffer` URL above.
+1. Create a MySQL database and database user in cPanel.
+2. Open phpMyAdmin and import `database.sql`.
+3. Copy `config.sample.php` to `config.php`.
+4. Enter the cPanel database name, database username, database password, admin username, and a password hash in `config.php`.
+5. Upload the repository contents to the domain document root, usually `public_html`. For an addon domain, use the document root shown in **cPanel → Domains**.
+6. Confirm that `.htaccess`, `api.php`, `admin.html`, `admin.js`, `assets/`, and the public HTML files are uploaded.
+7. Enable HTTPS through Namecheap SSL or cPanel SSL/TLS.
+8. Open `/api/health` and confirm that it returns a JSON success response.
+9. Open `/admin.html` and sign in with the configured admin credentials.
 
-A custom domain can be added later by restoring a `CNAME` file and configuring DNS, but it is intentionally disabled for now.
-
-## Admin and affiliate links
-
-The admin dashboard supports link creation, URL updates, activation changes, deletion, and placement assignment. A link can be assigned to the Hero CTA, operator buttons, offer cards, section CTAs, or the countdown CTA.
-
-The admin dashboard requires the Node backend. Deploy `server.js` to a Node-compatible host such as Render, Railway, a VPS, or another service that supports persistent Node processes. Configure `ADMIN_USERNAME` and `ADMIN_PASSWORD` as host secrets. Do not commit `.admin-env` or any password to Git.
-
-After deploying the API, update the frontend API origin if the API is hosted on a different domain and configure CORS for the GitHub Pages origin.
-
-## Local verification
-
-The public site can be served with a static server. The complete admin/API flow requires the Node server and environment variables:
+Generate a password hash locally with:
 
 ```bash
-set -a
-. ./.admin-env
-set +a
-node server.js
+php -r "echo password_hash('YOUR_LONG_UNIQUE_PASSWORD', PASSWORD_DEFAULT), PHP_EOL;"
 ```
 
-The public site is available at `http://127.0.0.1:8080/`. The admin dashboard is at `http://127.0.0.1:8080/admin.html`.
+Never commit `config.php` or place database credentials in JavaScript. The repository ignores `config.php`, and `.htaccess` denies direct access to it if it is stored under the document root.
 
-## Repository hygiene
+For the full Bengali/English cPanel walkthrough, see [`NAMECHEAP_PHP_MYSQL.md`](NAMECHEAP_PHP_MYSQL.md).
 
-Legacy source modules, duplicate hero assets, unused CSS modules, the old build script, the logo source demo, and unused package metadata were removed from the deployable repository. The Pages workflow now publishes only the verified public site.
+## Local PHP verification
+
+Create a local configuration from the sample and provide a MySQL database. Then run:
+
+```bash
+cp config.sample.php config.php
+php -S 127.0.0.1:8080
+```
+
+For Apache-style `/api/...` rewrites, use the uploaded `.htaccess` on Namecheap. PHP's built-in server does not process `.htaccess`; direct local API testing can use `/api.php` with an appropriate request URI or an Apache/PHP local server.
+
+## GitHub Pages
+
+The GitHub Pages workflow still publishes the public static pages only. GitHub Pages cannot execute PHP or provide the MySQL API, so `/admin.html` is not a working admin deployment on the GitHub Pages URL. Use Namecheap shared hosting for the complete site and admin system.
+
+## Data and security
+
+MySQL stores affiliate links, admin sessions, and contact inquiries. The application uses PDO prepared statements, password hashes, hashed bearer tokens, HTTPS-only affiliate URL validation, and protected configuration files. Use a long unique admin password, keep HTTPS enabled, and back up the MySQL database regularly.
+
+The application is intended for a small shared-hosting site. If traffic or write volume becomes high, add rate limiting, centralized logging, and a managed database backup policy.
