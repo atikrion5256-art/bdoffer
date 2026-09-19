@@ -793,10 +793,10 @@ svg { display: block; }
   const el = document.getElementById('countdown');
   if (el) {
     const q = (u) => el.querySelector(`[data-u="${u}"]`);
-    const parsed = Date.parse(el.dataset.deadline || '');
-    const end = () => (Number.isNaN(parsed) ? new Date().setHours(23, 59, 59, 999) : parsed);
+    const cycleMs = 12 * 60 * 60 * 1000;
     const paint = () => {
-      const left = Math.max(0, end() - Date.now());
+      const elapsed = Date.now() % cycleMs;
+      const left = cycleMs - elapsed;
       q('h').textContent = bn(Math.floor(left / 3.6e6));
       q('m').textContent = bn(Math.floor(left / 6e4) % 60);
       q('s').textContent = bn(Math.floor(left / 1e3) % 60);
